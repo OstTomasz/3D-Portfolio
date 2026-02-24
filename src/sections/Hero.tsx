@@ -2,6 +2,7 @@ import { words } from "@/constants/constants";
 import { useRef } from "react";
 import { useWordSlider } from "@/hooks/useWordSlider";
 import { Button } from "@/components/Button";
+import { HeroExperience } from "@/components/models/hero_models/HeroExperience";
 
 export const Hero = () => {
   const wrapperRef = useRef<HTMLDivElement>(null!);
@@ -9,7 +10,7 @@ export const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
-        <img src="./assets/images/bg.png" alt="background" />
+        <img src="./images/bg.png" alt="background" />
       </div>
 
       <div className="hero-layout">
@@ -51,6 +52,11 @@ export const Hero = () => {
             />
           </div>
         </header>
+        <figure>
+          <div className="hero-3d-layout border-red-200 border-2">
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ type ButtonProps = {
 
 export const Button = ({ classes, text, id }: ButtonProps) => {
   return (
-    <button id={id} className={`${classes ?? ""} cta-wrapper`}>
+    <a id={id} className={`${classes ?? ""} cta-wrapper`}>
       <div className="cta-button group">
         <div className="bg-circle" />
         <p className="text">{text}</p>
@@ -14,6 +14,6 @@ export const Button = ({ classes, text, id }: ButtonProps) => {
           <img src="/assets/images/arrow-down.svg" alt="arrow" />
         </div>
       </div>
-    </button>
+    </a>
   );
 };
