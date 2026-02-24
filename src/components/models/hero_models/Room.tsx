@@ -2,8 +2,7 @@ import type { GLTFType } from "@/types/three";
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import type { ThreeElements } from "@react-three/fiber";
-import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+
 import { Mesh, MeshPhongMaterial, MeshStandardMaterial } from "three";
 
 export function Room(props: ThreeElements["group"]) {
@@ -18,6 +17,7 @@ export function Room(props: ThreeElements["group"]) {
 
   const bodyMaterial = new MeshPhongMaterial({
     color: "#a7a8a7",
+    // map: matcapTexture,
   });
 
   const tableMaterial = new MeshPhongMaterial({
@@ -42,15 +42,6 @@ export function Room(props: ThreeElements["group"]) {
 
   return (
     <group {...props} dispose={null}>
-      <EffectComposer>
-        <SelectiveBloom
-          selection={screensRef}
-          intensity={2.5} // Strength of the bloom
-          luminanceThreshold={0.5} // Minimum luminance needed
-          luminanceSmoothing={1} // Smooth transition
-          blendFunction={BlendFunction.ALPHA} // How it blends
-        />
-      </EffectComposer>
       <mesh
         geometry={nodes._________6_blinn1_0.geometry}
         material={curtainMaterial}

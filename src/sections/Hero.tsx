@@ -3,10 +3,20 @@ import { useRef } from "react";
 import { useWordSlider } from "@/hooks/useWordSlider";
 import { Button } from "@/components/Button";
 import { HeroExperience } from "@/components/models/hero_models/HeroExperience";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { AnimatedCounters } from "@/components/AnimatedCounters";
 
 export const Hero = () => {
   const wrapperRef = useRef<HTMLDivElement>(null!);
   useWordSlider(wrapperRef);
+  useGSAP(() => {
+    gsap.fromTo(
+      ".hero-text",
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" },
+    );
+  });
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
@@ -31,7 +41,7 @@ export const Hero = () => {
                           alt={text}
                           className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                         />
-                        <span>{text}</span>
+                        <span className="pr-4">{text}</span>
                       </span>
                     ))}
                   </span>
@@ -41,14 +51,14 @@ export const Hero = () => {
                 that deliver results.
               </h1>
             </div>
-            <p className="xl:text-start text-center md:text-xl xl:text-2xl relative z-10 pointer-events-none">
+            <p className="xl:pb-15 xl:text-start text-center md:text-xl xl:text-2xl relative z-10 pointer-events-none">
               Hello, I'm Tomasz, a Poland-based developer who finds the sweet
               spot between clean code and great UX.
             </p>
             <Button
               classes="md:w-80 md:h-16 w-60 h-12"
               text="See my Work"
-              id="CTA-button"
+              id="counters"
             />
           </div>
         </header>
@@ -58,6 +68,7 @@ export const Hero = () => {
           </div>
         </figure>
       </div>
+      <AnimatedCounters />
     </section>
   );
 };

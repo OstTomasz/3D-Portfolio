@@ -17,7 +17,7 @@ export const useWordSlider = (ref: React.RefObject<HTMLDivElement>) => {
       const itemHeight = (items[0] as HTMLElement).offsetHeight;
       const uniqueCount = items.length / 2;
 
-      tl = gsap.timeline({ repeat: -1 });
+      tl = gsap.timeline({ repeat: -1, delay: 1 });
 
       for (let i = 0; i < uniqueCount; i++) {
         tl.to(ref.current, {

@@ -1,12 +1,33 @@
 type ButtonProps = {
   classes?: string;
   text: string;
-  id: string;
+  id?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-export const Button = ({ classes, text, id }: ButtonProps) => {
+export const Button = ({ classes, text, id, onClick }: ButtonProps) => {
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    if (onClick) {
+      onClick(e);
+    } else if (id) {
+      e.preventDefault();
+      const target = document.getElementById(id);
+
+      if (target) {
+        const offset = window.innerHeight * 0.05;
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
-    <a id={id} className={`${classes ?? ""} cta-wrapper`}>
+    <button
+      id={id}
+      className={`${classes ?? ""} cta-wrapper`}
+      onClick={handleClick}
+    >
       <div className="cta-button group">
         <div className="bg-circle" />
         <p className="text">{text}</p>
@@ -14,6 +35,6 @@ export const Button = ({ classes, text, id }: ButtonProps) => {
           <img src="/images/arrow-down.svg" alt="arrow" />
         </div>
       </div>
-    </a>
+    </button>
   );
 };

@@ -1,13 +1,13 @@
 export const HeroLights = () => {
   return (
     <>
-      <spotLight position={[5, 3, 6]} intensity={200} />
+      <spotLight position={[10, 10, 10]} intensity={500} />
       <spotLight
-        position={[1.5, 3, 2]}
-        angle={0.3}
-        intensity={80}
+        position={[12, 10, 7]}
+        angle={0.2}
+        intensity={800}
         color="#fff"
-        penumbra={0.7}
+        penumbra={0.8}
       />
     </>
   );

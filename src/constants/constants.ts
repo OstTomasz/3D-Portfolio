@@ -29,10 +29,15 @@ export const words = [
 ] as const;
 
 export const counterItems = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
-  { value: 90, suffix: "%", label: "Client Retention Rate" },
+  {
+    value: 0,
+    suffix: "",
+    label: "Years of proffesional experience",
+    id: "counter1",
+  },
+  { value: 2, suffix: "+", label: "years of study", id: "counter2" },
+  { value: 10, suffix: "+", label: "completed projects", id: "counter3" },
+  { value: 100, suffix: "%", label: "commitment", id: "counter4" },
 ] as const;
 
 export const logoIconsList = [
