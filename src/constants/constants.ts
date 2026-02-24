@@ -35,9 +35,9 @@ export const counterItems = [
     label: "Years of proffesional experience",
     id: "counter1",
   },
-  { value: 2, suffix: "+", label: "years of study", id: "counter2" },
-  { value: 10, suffix: "+", label: "completed projects", id: "counter3" },
-  { value: 100, suffix: "%", label: "commitment", id: "counter4" },
+  { value: 2, suffix: "+", label: "Years of study", id: "counter2" },
+  { value: 10, suffix: "+", label: "Completed projects", id: "counter3" },
+  { value: 100, suffix: "%", label: "Commitment", id: "counter4" },
 ] as const;
 
 export const logoIconsList = [

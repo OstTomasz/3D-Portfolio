@@ -14,9 +14,7 @@ export const Button = ({ classes, text, id, onClick }: ButtonProps) => {
       const target = document.getElementById(id);
 
       if (target) {
-        const offset = window.innerHeight * 0.05;
-        const top =
-          target.getBoundingClientRect().top + window.scrollY - offset;
+        const top = target.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top, behavior: "smooth" });
       }
     }
