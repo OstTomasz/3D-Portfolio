@@ -1,6 +1,6 @@
 import type { GLTFType } from "@/types/three";
 import { useRef } from "react";
-import { useGLTF, useTexture } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import type { ThreeElements } from "@react-three/fiber";
 import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
@@ -11,18 +11,17 @@ export function Room(props: ThreeElements["group"]) {
     "/models/optimized-room.glb",
   ) as GLTFType;
   const screensRef = useRef<Mesh>(null!);
-  const matcapTexture = useTexture("/images/textures/mat1.png");
 
   const curtainMaterial = new MeshPhongMaterial({
-    color: "#d90429",
+    color: "#00c9bc",
   });
 
   const bodyMaterial = new MeshPhongMaterial({
-    map: matcapTexture,
+    color: "#a7a8a7",
   });
 
   const tableMaterial = new MeshPhongMaterial({
-    color: "#582f0e",
+    color: "#912c2c",
   });
 
   const radiatorMaterial = new MeshPhongMaterial({
@@ -30,11 +29,11 @@ export function Room(props: ThreeElements["group"]) {
   });
 
   const compMaterial = new MeshStandardMaterial({
-    color: "#fff",
+    color: "#444",
   });
 
   const pillowMaterial = new MeshPhongMaterial({
-    color: "#8338ec",
+    color: "#333",
   });
 
   const chairMaterial = new MeshPhongMaterial({
@@ -46,10 +45,10 @@ export function Room(props: ThreeElements["group"]) {
       <EffectComposer>
         <SelectiveBloom
           selection={screensRef}
-          intensity={1.5} // Strength of the bloom
-          luminanceThreshold={0.2} // Minimum luminance needed
-          luminanceSmoothing={0.9} // Smooth transition
-          blendFunction={BlendFunction.ADD} // How it blends
+          intensity={2.5} // Strength of the bloom
+          luminanceThreshold={0.5} // Minimum luminance needed
+          luminanceSmoothing={1} // Smooth transition
+          blendFunction={BlendFunction.ALPHA} // How it blends
         />
       </EffectComposer>
       <mesh
