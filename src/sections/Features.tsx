@@ -2,7 +2,7 @@ import { abilities } from "@/constants/constants";
 
 export const Features = () => {
   return (
-    <div className="w-full padding-x-lg">
+    <section className="w-full padding-x-lg">
       <div className="mx-ato grid-3-cols">
         {abilities.map(({ imgPath, title, desc, id }) => (
           <div
@@ -17,6 +17,6 @@ export const Features = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

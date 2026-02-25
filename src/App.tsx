@@ -1,4 +1,5 @@
 import { NavBar } from "./components/Navbar";
+import { Experience } from "./sections/Experience";
 import { Features } from "./sections/Features";
 import { Hero } from "./sections/Hero";
 import { Showcase } from "./sections/Showcase";
@@ -11,8 +12,9 @@ export const App = () => {
       <main>
         <Hero />
         <Showcase />
-        {/* <Logos /> scrollbar with companies*/}
+        {/* <Logos /> //scrollbar with companies*/}
         <Features />
+        <Experience />
       </main>
     </>
   );

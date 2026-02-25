@@ -2,7 +2,7 @@ import { logoIconsList } from "@/constants/constants";
 
 export const Logos = () => {
   return (
-    <div className="md:my-20 my-10 relative">
+    <section className="md:my-20 my-10 relative">
       <div className="gradient-edge" />
       <div className="gradient-edge" />
 
@@ -26,6 +26,6 @@ export const Logos = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
