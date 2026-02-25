@@ -47,36 +47,47 @@ export const counterItems = [
 export const logoIconsList = [
   {
     imgPath: "./images/logos/company-logo-1.png",
+    id: "logo1",
   },
   {
     imgPath: "./images/logos/company-logo-2.png",
+    id: "logo2",
   },
   {
     imgPath: "./images/logos/company-logo-3.png",
+    id: "logo3",
   },
   {
     imgPath: "./images/logos/company-logo-4.png",
+    id: "logo4",
   },
   {
     imgPath: "./images/logos/company-logo-5.png",
+    id: "logo5",
   },
   {
     imgPath: "./images/logos/company-logo-6.png",
+    id: "logo6",
   },
   {
     imgPath: "./images/logos/company-logo-7.png",
+    id: "logo7",
   },
   {
     imgPath: "./images/logos/company-logo-8.png",
+    id: "logo8",
   },
   {
     imgPath: "./images/logos/company-logo-9.png",
+    id: "logo9",
   },
   {
     imgPath: "./images/logos/company-logo-10.png",
+    id: "logo10",
   },
   {
     imgPath: "./images/logos/company-logo-11.png",
+    id: "logo11",
   },
 ] as const;
 

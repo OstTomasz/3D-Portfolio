@@ -81,7 +81,7 @@ section {
   }
 
   .hero-layout {
-    @apply relative z-10 xl:mt-20 mt-32 xl:h-150 md:h-230 h-140 flex items-start justify-center;
+    @apply relative z-10 mt-32 xl:h-150 md:h-230 h-140 flex items-start justify-center;
   }
 
   .hero-text {
@@ -99,7 +99,7 @@ section {
   }
 
   .hero-3d-layout {
-    @apply xl:w-[50%] w-full md:h-150 h-90 absolute xl:top-0 md:top-110 top-75 xl:right-20 right-0;
+    @apply xl:w-[55%] w-full md:h-150 h-90 absolute xl:top-0 md:top-110 top-75 xl:right-20 right-0;
   }
 
   .navbar {
@@ -375,47 +375,37 @@ section {
 
 .gradient-edge:nth-of-type(1) {
   left: 0;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: --var(bg-black-100);
+  background: linear-gradient(90deg, #0e0e10, rgba(255, 255, 255, 0) 100%);
 }
 .gradient-edge:nth-of-type(2) {
   right: 0;
-  background: linear-gradient(
-    -90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(-90deg, #0e0e10, rgba(255, 255, 255, 0) 100%);
 }
 
 /* marquee */
 .marquee {
-  width: 100dvw;
-  overflow: hidden;
-  position: relative;
+  width: 100%; /* Szerokość paska */
+  overflow: hidden; /* Ukrywa elementy wychodzące poza ekran */
+  white-space: nowrap; /* Zapobiega łamaniu linii */
+  padding: 10px 0;
 }
+
 .marquee-box {
   display: flex;
-  align-items: center;
-  width: 200%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  animation: marquee 60s linear infinite;
+  width: 200%; /* Podwójna szerokość, aby pomieścić duplikaty */
+  animation: scroll 20s linear infinite; /* Animacja */
 }
 .marquee-item {
   float: left;
 }
-@keyframes marquee {
+@keyframes scroll {
   0% {
-    left: 0;
+    transform: translateX(0);
   }
   100% {
-    left: -100%;
-  }
+    transform: translateX(-50%);
+  } /* Przesunięcie o połowę (duplikat) */
 }
 /* marquee end */
 
