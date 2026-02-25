@@ -2,18 +2,22 @@ export const navLinks = [
   {
     name: "Work",
     link: "#work",
+    id: "nav1",
   },
   {
     name: "Experience",
     link: "#experience",
+    id: "nav2",
   },
   {
     name: "Skills",
     link: "#skills",
+    id: "nav3",
   },
   {
     name: "Testimonials",
     link: "#testimonials",
+    id: "nav4",
   },
 ] as const;
 

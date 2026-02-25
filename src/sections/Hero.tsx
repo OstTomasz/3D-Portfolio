@@ -24,7 +24,7 @@ export const Hero = () => {
       </div>
 
       <div className="hero-layout xl:justify-start">
-        <header className="flex flex-col  justify-center xl:w-1/2 md:w-full w-screen  xl:px-0 xl:pl-15 md:px-20 px-5">
+        <div className="flex flex-col  justify-center xl:w-1/2 md:w-full w-screen  xl:px-0 xl:pl-15 md:px-20 px-5">
           <div className="flex flex-col items-center xl:items-start gap-7">
             <div className="hero-text">
               <h1>
@@ -61,9 +61,9 @@ export const Hero = () => {
               id="counters"
             />
           </div>
-        </header>
+        </div>
         <figure>
-          <div className="hero-3d-layout">
+          <div className="hero-3d-layout cursor-grab active:cursor-grabbing">
             <HeroExperience />
           </div>
         </figure>

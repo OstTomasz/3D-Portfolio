@@ -30,11 +30,11 @@ export const Counter = ({ value, suffix, label }: counterProps) => {
 
   return (
     <div className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center">
-      <div className="counter-number text-white text-5xl font-bold mb-2">
+      <div className="counter-number text-white text-5xl font-bold mb-2 cursor-default">
         {count}
         {suffix}
       </div>
-      <div>{label}</div>
+      <div className="cursor-default">{label}</div>
     </div>
   );
 };
