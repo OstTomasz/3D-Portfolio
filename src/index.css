@@ -158,11 +158,15 @@ section {
     @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
 
     .showcaselayout {
-      @apply flex xl:flex-row flex-col gap-10 justify-between;
+      @apply flex 2xl:flex-row flex-col gap-10 justify-between w-full 2xl:items-stretch;
+    }
+
+    .first-project-col {
+      @apply flex flex-col gap-10 2xl:w-[60%] w-full;
     }
 
     .first-project-wrapper {
-      @apply h-full flex flex-col justify-between xl:w-[60%];
+      @apply h-full flex flex-col;
 
       .image-wrapper {
         @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
@@ -173,7 +177,7 @@ section {
       }
 
       .text-content {
-        @apply space-y-5 mt-5;
+        @apply space-y-5 mt-5 flex-1;
 
         .badges {
           @apply flex gap-2 mb-4;
@@ -186,7 +190,7 @@ section {
     }
 
     .project-list-wrapper {
-      @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+      @apply flex md:flex-row flex-col gap-10 2xl:w-[40%] 2xl:flex-col w-full 2xl:gap-0 2xl:justify-around;
 
       .image-wrapper {
         @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
@@ -200,8 +204,19 @@ section {
         @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5;
       }
     }
-  }
 
+    .github-link-wrapper {
+      @apply flex-1;
+
+      img {
+        @apply max-h-50 2xl:max-h-39;
+      }
+    }
+
+    .project {
+      @apply flex-1 flex flex-col;
+    }
+  }
   .cta-wrapper {
     @apply relative z-20 cursor-pointer;
   }
