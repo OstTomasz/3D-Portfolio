@@ -13,6 +13,7 @@ body {
   color: var(--color-white-50);
   scroll-behavior: smooth;
   font-family: "Mona Sans", sans-serif;
+  cursor: default;
 }
 
 section {
@@ -27,6 +28,8 @@ section {
   --color-black-200: #282732;
   --color-blue-50: #839cb5;
   --color-blue-100: #2d2d38;
+  --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 143rem;
 }
 
 @layer utilities {
@@ -258,7 +261,7 @@ section {
   }
 
   .timeline {
-    @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black;
+    @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black-100;
   }
 
   .timeline-logo {
@@ -266,7 +269,7 @@ section {
   }
 
   .exp-card-wrapper {
-    @apply flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between;
+    @apply flex flex-col-reverse xl:flex-row 4xl:gap-25 3xl:gap-22 2xl:gap-20 xl:gap-18 gap-10 justify-between;
   }
 
   .gradient-edge {
