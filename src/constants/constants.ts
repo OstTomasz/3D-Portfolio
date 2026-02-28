@@ -14,11 +14,11 @@ export const navLinks = [
     link: "#skills",
     id: "nav3",
   },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
-    id: "nav4",
-  },
+  // {
+  //   name: "Testimonials",
+  //   link: "#testimonials",
+  //   id: "nav4",
+  // },
 ] as const;
 
 export const words = [
@@ -221,21 +221,21 @@ export const techStackIcons = [
   {
     name: "Backend Developer",
     modelPath: "./models/node-transformed.glb",
-    scale: 5,
+    scale: 4.72,
     rotation: [0, -Math.PI / 2, 0],
     id: "techIcon3",
   },
   {
     name: "Interactive Developer",
     modelPath: "./models/three.js-transformed.glb",
-    scale: 0.05,
+    scale: 0.039,
     rotation: [0, 0, 0],
     id: "techIcon4",
   },
   {
     name: "Project Manager",
     modelPath: "./models/git-svg-transformed.glb",
-    scale: 0.05,
+    scale: 0.046,
     rotation: [0, -Math.PI / 4, 0],
     id: "techIcon5",
   },

@@ -5,7 +5,7 @@ import Computer from "./Computer";
 
 export const ContactExperience = () => {
   return (
-    <Canvas shadows camera={{ position: [0, 3, 7], fov: 45 }}>
+    <Canvas shadows camera={{ position: [0, 3, 7], fov: 55 }}>
       <ambientLight intensity={0.5} color="#fff4e6" />
 
       <directionalLight position={[5, 5, 3]} intensity={2.5} color="#ffd9b3" />
@@ -19,7 +19,7 @@ export const ContactExperience = () => {
 
       <OrbitControls
         enableZoom={false}
-        minPolarAngle={Math.PI / 5}
+        minPolarAngle={Math.PI / 4}
         maxPolarAngle={Math.PI / 2}
       />
 
@@ -29,12 +29,12 @@ export const ContactExperience = () => {
           position={[0, -1.5, 0]}
           rotation={[-Math.PI / 2, 0, 0]}
         >
-          <planeGeometry args={[30, 30]} />
-          <meshStandardMaterial color="#a46b2d" />
+          <planeGeometry args={[10, 10]} />
+          <meshStandardMaterial color="#2b9cff" />
         </mesh>
       </group>
 
-      <group scale={0.03} position={[0, -1.49, -2]} castShadow>
+      <group scale={0.025} position={[0, -1.49, -2]} castShadow>
         <Computer />
       </group>
     </Canvas>

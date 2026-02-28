@@ -5,11 +5,15 @@ import { Showcase } from "./sections/Showcase";
 import { Features } from "./sections/Features";
 import { Experience } from "./sections/Experience";
 import { TechStack } from "./sections/TechStack";
+import { Contact } from "./sections/Contact";
 // import { Testemonials } from "./sections/Testemonials";
+
+import { Toaster } from "react-hot-toast";
 
 export const App = () => {
   return (
     <>
+      <Toaster position="top-right" />;
       <NavBar />
       <main>
         <Hero />
@@ -19,6 +23,7 @@ export const App = () => {
         <Experience />
         <TechStack />
         {/* <Testemonials /> <== section with clients review - add after some clients work */}
+        <Contact />
       </main>
     </>
   );

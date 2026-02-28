@@ -17,7 +17,6 @@ export function Room(props: ThreeElements["group"]) {
 
   const bodyMaterial = new MeshPhongMaterial({
     color: "#a7a8a7",
-    // map: matcapTexture,
   });
 
   const tableMaterial = new MeshPhongMaterial({

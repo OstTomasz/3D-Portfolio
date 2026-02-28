@@ -1,118 +1,148 @@
-// import { ContactExperience } from "@/components/models/contact/ContactExperience";
-// import { useRef, useState } from "react";
+import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+import { ContactExperience } from "@/components/models/contact/ContactExperience";
+import { TitleHeader } from "@/components/TitleHeader";
 
-// const Contact = () => {
-//   const formRef = useRef(null);
-//   const [loading, setLoading] = useState(false);
-//   const [form, setForm] = useState({
-//     name: "",
-//     email: "",
-//     message: "",
-//   });
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Button } from "@/components/Button";
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setForm({ ...form, [name]: value });
-//   };
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.email("Invalid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setLoading(true); // Show loading state
+type FormData = z.infer<typeof formSchema>;
 
-//     try {
-//       await emailjs.sendForm(
-//         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-//         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-//         formRef.current,
-//         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-//       );
+const SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID_USER = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID_USER;
+const TEMPLATE_ID_OWNER = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID_OWNER;
+const PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
 
-//       // Reset form and stop loading
-//       setForm({ name: "", email: "", message: "" });
-//     } catch (error) {
-//       console.error("EmailJS Error:", error); // Optional: show toast
-//     } finally {
-//       setLoading(false); // Always stop loading, even on error
-//     }
-//   };
+emailjs.init(PUBLIC_KEY);
 
-//   return (
-//     <section id="contact" className="flex-center section-padding">
-//       <div className="w-full h-full md:px-10 px-5">
-//         <TitleHeader
-//           title="Get in Touch – Let’s Connect"
-//           sub="💬 Have questions or ideas? Let’s talk! 🚀"
-//         />
-//         <div className="grid-12-cols mt-16">
-//           <div className="xl:col-span-5">
-//             <div className="flex-center card-border rounded-xl p-10">
-//               <form
-//                 ref={formRef}
-//                 onSubmit={handleSubmit}
-//                 className="w-full flex flex-col gap-7"
-//               >
-//                 <div>
-//                   <label htmlFor="name">Your name</label>
-//                   <input
-//                     type="text"
-//                     id="name"
-//                     name="name"
-//                     value={form.name}
-//                     onChange={handleChange}
-//                     placeholder="What’s your good name?"
-//                     required
-//                   />
-//                 </div>
+export const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
 
-//                 <div>
-//                   <label htmlFor="email">Your Email</label>
-//                   <input
-//                     type="email"
-//                     id="email"
-//                     name="email"
-//                     value={form.email}
-//                     onChange={handleChange}
-//                     placeholder="What’s your email address?"
-//                     required
-//                   />
-//                 </div>
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    mode: "onTouched",
+  });
 
-//                 <div>
-//                   <label htmlFor="message">Your Message</label>
-//                   <textarea
-//                     id="message"
-//                     name="message"
-//                     value={form.message}
-//                     onChange={handleChange}
-//                     placeholder="How can I help you?"
-//                     rows="5"
-//                     required
-//                   />
-//                 </div>
+  const onSubmit = async () => {
+    if (!formRef.current) return;
+    setLoading(true);
 
-//                 <button type="submit">
-//                   <div className="cta-button group">
-//                     <div className="bg-circle" />
-//                     <p className="text">
-//                       {loading ? "Sending..." : "Send Message"}
-//                     </p>
-//                     <div className="arrow-wrapper">
-//                       <img src="/images/arrow-down.svg" alt="arrow" />
-//                     </div>
-//                   </div>
-//                 </button>
-//               </form>
-//             </div>
-//           </div>
-//           <div className="xl:col-span-7 min-h-96">
-//             <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
-//               <ContactExperience />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID_USER, formRef.current);
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID_OWNER, formRef.current);
+      reset();
+      toast.success(
+        "Message sent successfully! Check your email for confirmation.",
+      );
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error(
+        "Something went wrong. Try again or contact me directly: ost.tomasz@gmail.com",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
-// export default Contact;
+  return (
+    <section id="contact" className="flex-center section-padding">
+      <div className="w-full h-full md:px-10 px-5">
+        <TitleHeader
+          title="Get in Touch – Let’s Connect"
+          subtitle="💬 Have questions or ideas? Let’s talk! 🚀"
+        />
+        <div className="grid-12-cols mt-16">
+          <div className="xl:col-span-5">
+            <div className="flex-center card-border rounded-xl p-10">
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit(onSubmit)}
+                className="w-full flex flex-col gap-7"
+                autoComplete="off"
+              >
+                <div>
+                  <label htmlFor="name">Your name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="What's your name?"
+                    autoComplete="off"
+                    {...register("name")}
+                  />
+                  <p className="text-red-500 text-sm mt-1 min-h-5">
+                    {errors.name?.message}
+                  </p>
+                </div>
+
+                <div>
+                  <label htmlFor="email">Your Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="What's your email address?"
+                    autoComplete="off"
+                    {...register("email")}
+                  />
+                  <p className="text-red-500 text-sm mt-1 min-h-5">
+                    {errors.email?.message}
+                  </p>
+                </div>
+
+                <div>
+                  <label htmlFor="message">Your Message</label>
+                  <textarea
+                    id="message"
+                    placeholder="How can I help you?"
+                    rows={5}
+                    {...register("message")}
+                  />
+                  <p className="text-red-500 text-sm mt-1 min-h-5">
+                    {errors.message?.message}
+                  </p>
+                </div>
+
+                <input
+                  type="hidden"
+                  name="time"
+                  value={new Date().toLocaleString("en-GB", {
+                    day: "2-digit",
+                    month: "short",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
+                  })}
+                />
+
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  text={loading ? "Sending..." : "Send Message"}
+                />
+              </form>
+            </div>
+          </div>
+          <div className="xl:col-span-7 min-h-96">
+            <div className="bg-[#ff9900] w-full h-full hover:cursor-grab active:cursor-grabbing rounded-3xl overflow-hidden">
+              <ContactExperience />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

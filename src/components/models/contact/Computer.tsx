@@ -2,7 +2,7 @@ import type { GLTFType } from "@/types/three";
 import { useGLTF } from "@react-three/drei";
 import type { ThreeElements } from "@react-three/fiber";
 
-export function Computer(props: ThreeElements["group"]) {
+export const Computer = (props: ThreeElements["group"]) => {
   const { nodes, materials } = useGLTF(
     "/models/computer-optimized-transformed.glb",
   ) as GLTFType;
@@ -25,7 +25,7 @@ export function Computer(props: ThreeElements["group"]) {
       </group>
     </group>
   );
-}
+};
 
 useGLTF.preload("/models/computer-optimized-transformed.glb");
 
