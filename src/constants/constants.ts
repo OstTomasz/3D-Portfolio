@@ -179,22 +179,27 @@ export const techStackImgs = [
   {
     name: "React Developer",
     imgPath: "./images/logos/react.png",
+    id: "techImg1",
   },
   {
     name: "Python Developer",
     imgPath: "./images/logos/python.svg",
+    id: "techImg2",
   },
   {
     name: "Backend Developer",
     imgPath: "./images/logos/node.png",
+    id: "techImg3",
   },
   {
     name: "Interactive Developer",
     imgPath: "./images/logos/three.png",
+    id: "techImg4",
   },
   {
     name: "Project Manager",
     imgPath: "./images/logos/git.svg",
+    id: "techImg5",
   },
 ] as const;
 
@@ -204,30 +209,35 @@ export const techStackIcons = [
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
+    id: "techIcon1",
   },
   {
     name: "Python Developer",
     modelPath: "./models/python-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
+    id: "techIcon2",
   },
   {
     name: "Backend Developer",
     modelPath: "./models/node-transformed.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
+    id: "techIcon3",
   },
   {
     name: "Interactive Developer",
     modelPath: "./models/three.js-transformed.glb",
     scale: 0.05,
     rotation: [0, 0, 0],
+    id: "techIcon4",
   },
   {
     name: "Project Manager",
     modelPath: "./models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
+    id: "techIcon5",
   },
 ] as const;
 
@@ -286,17 +296,21 @@ export const socialImgs = [
   {
     name: "insta",
     imgPath: "./images/insta.png",
+    id: "socialImg1",
   },
   {
     name: "fb",
     imgPath: "./images/fb.png",
+    id: "socialImg2",
   },
   {
     name: "x",
     imgPath: "./images/x.png",
+    id: "socialImg3",
   },
   {
     name: "linkedin",
     imgPath: "./images/linkedin.png",
+    id: "socialImg4",
   },
 ] as const;
