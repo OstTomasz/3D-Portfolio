@@ -9,6 +9,7 @@ import { Contact } from "./sections/Contact";
 // import { Testemonials } from "./sections/Testemonials";
 
 import { Toaster } from "react-hot-toast";
+import { Footer } from "./sections/Footer";
 
 export const App = () => {
   return (
@@ -25,6 +26,7 @@ export const App = () => {
         {/* <Testemonials /> <== section with clients review - add after some clients work */}
         <Contact />
       </main>
+      <Footer />
     </>
   );
 };

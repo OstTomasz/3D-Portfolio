@@ -1,4 +1,8 @@
-export const navLinks = [
+export const navLinks: {
+  name: string;
+  link: `#${string}`;
+  id: `nav${number}`;
+}[] = [
   {
     name: "Work",
     link: "#work",
@@ -21,7 +25,11 @@ export const navLinks = [
   // },
 ] as const;
 
-export const words = [
+export const words: {
+  text: string;
+  imgPath: `./images/${string}`;
+  id: `word${number}`;
+}[] = [
   { text: "Ideas", imgPath: "./images/ideas.svg", id: "word1" },
   { text: "Concepts", imgPath: "./images/concepts.svg", id: "word2" },
   { text: "Designs", imgPath: "./images/designs.svg", id: "word3" },
@@ -32,7 +40,12 @@ export const words = [
   { text: "Code", imgPath: "./images/code.svg", id: "word8" },
 ] as const;
 
-export const counterItems = [
+export const counterItems: {
+  value: number;
+  suffix: "" | "+" | "%";
+  label: string;
+  id: `counter${number}`;
+}[] = [
   {
     value: 0,
     suffix: "",
@@ -44,7 +57,10 @@ export const counterItems = [
   { value: 100, suffix: "%", label: "Commitment", id: "counter4" },
 ] as const;
 
-export const logoIconsList = [
+export const logoIconsList: {
+  imgPath: `./images/logos/${string}`;
+  id: `logo${number}`;
+}[] = [
   {
     imgPath: "./images/logos/company-logo-1.png",
     id: "logo1",
@@ -91,7 +107,12 @@ export const logoIconsList = [
   },
 ] as const;
 
-export const abilities = [
+export const abilities: {
+  imgPath: `./images/${string}`;
+  title: string;
+  desc: string;
+  id: `ability${number}`;
+}[] = [
   {
     imgPath: "./images/seo.png",
     title: "Quality Focus",
@@ -112,7 +133,15 @@ export const abilities = [
   },
 ] as const;
 
-export const expCards = [
+export const expCards: {
+  review: string;
+  imgPath: `./images/${string}`;
+  logoPath: `./images/${string}`;
+  title: string;
+  date: string;
+  responsibilities: string[];
+  id: `experience${string}`;
+}[] = [
   {
     review:
       "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
@@ -157,7 +186,11 @@ export const expCards = [
   },
 ] as const;
 
-export const expLogos = [
+export const expLogos: {
+  name: string;
+  imgPath: `./images/${string}`;
+  id: `expLogo${number}`;
+}[] = [
   {
     name: "logo1",
     imgPath: "./images/logo1.png",
@@ -175,7 +208,11 @@ export const expLogos = [
   },
 ] as const;
 
-export const techStackImgs = [
+export const techStackImgs: {
+  name: string;
+  imgPath: `./images/${string}`;
+  id: `techImg${number}`;
+}[] = [
   {
     name: "React Developer",
     imgPath: "./images/logos/react.png",
@@ -203,10 +240,16 @@ export const techStackImgs = [
   },
 ] as const;
 
-export const techStackIcons = [
+export const techStackIcons: {
+  name: string;
+  modelPath: `./models/${string}`;
+  scale: number;
+  rotation: [number, number, number];
+  id: `techIcon${number}`;
+}[] = [
   {
     name: "React Developer",
-    modelPath: "/models/react_logo-transformed.glb",
+    modelPath: "./models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
     id: "techIcon1",
@@ -241,14 +284,20 @@ export const techStackIcons = [
   },
 ] as const;
 
-export const testimonials = [
+export const testimonials: {
+  name: string;
+  mentions: `@${string}`;
+  review: string;
+  imgPath: `./images/${string}`;
+  id: `testimonial${number}`;
+}[] = [
   {
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
       "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
     imgPath: "./images/client1.png",
-    id: "testemonial1",
+    id: "testimonial1",
   },
   {
     name: "Wade Warren",
@@ -256,7 +305,7 @@ export const testimonials = [
     review:
       "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
     imgPath: "./images/client3.png",
-    id: "testemonial2",
+    id: "testimonial2",
   },
   {
     name: "Guy Hawkins",
@@ -264,7 +313,7 @@ export const testimonials = [
     review:
       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
     imgPath: "./images/client2.png",
-    id: "testemonial3",
+    id: "testimonial3",
   },
   {
     name: "Marvin McKinney",
@@ -272,7 +321,7 @@ export const testimonials = [
     review:
       "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
     imgPath: "./images/client5.png",
-    id: "testemonial4",
+    id: "testimonial4",
   },
   {
     name: "Floyd Miles",
@@ -280,7 +329,7 @@ export const testimonials = [
     review:
       "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
     imgPath: "./images/client4.png",
-    id: "testemonial5",
+    id: "testimonial5",
   },
   {
     name: "Albert Flores",
@@ -288,29 +337,29 @@ export const testimonials = [
     review:
       "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
     imgPath: "./images/client6.png",
-    id: "testemonial6",
+    id: "testimonial6",
   },
 ] as const;
 
-export const socialImgs = [
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import type { IconType } from "react-icons";
+
+export const socials: {
+  name: string;
+  icon: IconType;
+  site: string;
+  id: `socialImg${number}`;
+}[] = [
   {
-    name: "insta",
-    imgPath: "./images/insta.png",
+    name: "github",
+    icon: FaGithub,
+    site: "https://github.com/OstTomasz",
     id: "socialImg1",
   },
   {
-    name: "fb",
-    imgPath: "./images/fb.png",
+    name: "linkedin",
+    icon: FaLinkedin,
+    site: "https://www.linkedin.com/in/tomasz-ostaszewski-7166071aa/",
     id: "socialImg2",
   },
-  {
-    name: "x",
-    imgPath: "./images/x.png",
-    id: "socialImg3",
-  },
-  {
-    name: "linkedin",
-    imgPath: "./images/linkedin.png",
-    id: "socialImg4",
-  },
-] as const;
+];
