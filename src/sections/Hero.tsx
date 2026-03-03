@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { AnimatedCounters } from "@/components/AnimatedCounters";
 
 export const Hero = () => {
-  const wrapperRef = useRef<HTMLDivElement>(null!);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   useWordSlider(wrapperRef);
   useGSAP(() => {
     gsap.fromTo(
@@ -24,7 +24,7 @@ export const Hero = () => {
       </div>
 
       <div className="hero-layout xl:justify-start">
-        <div className="flex flex-col  justify-center xl:w-1/2 md:w-full w-screen  xl:px-0 xl:pl-15 md:px-20 px-5">
+        <div className="flex flex-col justify-center xl:w-1/2 md:w-full w-screen xl:px-0 xl:pl-15 md:px-20 px-5">
           <div className="flex flex-col items-center xl:items-start gap-7">
             <div className="hero-text">
               <h1>
@@ -56,13 +56,13 @@ export const Hero = () => {
               spot between clean code and great UX.
             </p>
             <Button
-              classes="md:w-80 md:h-16 w-60 h-12"
+              className="md:w-80 md:h-16 w-60 h-12"
               text="See my Work"
               id="counters"
             />
           </div>
         </div>
-        <figure>
+        <figure aria-label="3D room model">
           <div className="hero-3d-layout cursor-grab active:cursor-grabbing">
             <HeroExperience />
           </div>

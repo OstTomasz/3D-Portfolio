@@ -1,59 +1,38 @@
 import type { GLTFType } from "@/types/three";
-import { useRef } from "react";
+
 import { useGLTF } from "@react-three/drei";
 import type { ThreeElements } from "@react-three/fiber";
 
-import { Mesh, MeshPhongMaterial, MeshStandardMaterial } from "three";
+import { ROOM_MATERIALS } from "@/constants/constants";
 
 export function Room(props: ThreeElements["group"]) {
   const { nodes, materials } = useGLTF(
     "/models/optimized-room.glb",
   ) as GLTFType;
-  const screensRef = useRef<Mesh>(null!);
-
-  const curtainMaterial = new MeshPhongMaterial({
-    color: "#00c9bc",
-  });
-
-  const bodyMaterial = new MeshPhongMaterial({
-    color: "#a7a8a7",
-  });
-
-  const tableMaterial = new MeshPhongMaterial({
-    color: "#912c2c",
-  });
-
-  const radiatorMaterial = new MeshPhongMaterial({
-    color: "#fff",
-  });
-
-  const compMaterial = new MeshStandardMaterial({
-    color: "#444",
-  });
-
-  const pillowMaterial = new MeshPhongMaterial({
-    color: "#333",
-  });
-
-  const chairMaterial = new MeshPhongMaterial({
-    color: "#000",
-  });
 
   return (
     <group {...props} dispose={null}>
       <mesh
         geometry={nodes._________6_blinn1_0.geometry}
-        material={curtainMaterial}
+        material={ROOM_MATERIALS.curtain}
       />
-      <mesh geometry={nodes.body1_blinn1_0.geometry} material={bodyMaterial} />
-      <mesh geometry={nodes.cabin_blinn1_0.geometry} material={tableMaterial} />
+      <mesh
+        geometry={nodes.body1_blinn1_0.geometry}
+        material={ROOM_MATERIALS.body}
+      />
+      <mesh
+        geometry={nodes.cabin_blinn1_0.geometry}
+        material={ROOM_MATERIALS.table}
+      />
       <mesh
         geometry={nodes.chair_body_blinn1_0.geometry}
-        material={chairMaterial}
+        material={ROOM_MATERIALS.chair}
       />
-      <mesh geometry={nodes.comp_blinn1_0.geometry} material={compMaterial} />
       <mesh
-        ref={screensRef}
+        geometry={nodes.comp_blinn1_0.geometry}
+        material={ROOM_MATERIALS.comp}
+      />
+      <mesh
         geometry={nodes.emis_lambert1_0.geometry}
         material={materials.lambert1}
       />
@@ -95,7 +74,7 @@ export function Room(props: ThreeElements["group"]) {
       />
       <mesh
         geometry={nodes.pillows_blinn1_0.geometry}
-        material={pillowMaterial}
+        material={ROOM_MATERIALS.pillow}
       />
       <mesh
         geometry={nodes.polySurface53_blinn1_0.geometry}
@@ -103,7 +82,7 @@ export function Room(props: ThreeElements["group"]) {
       />
       <mesh
         geometry={nodes.radiator_blinn1_0.geometry}
-        material={radiatorMaterial}
+        material={ROOM_MATERIALS.radiator}
       />
       <mesh
         geometry={nodes.radiator_blinn1_0001.geometry}
@@ -125,7 +104,10 @@ export function Room(props: ThreeElements["group"]) {
         geometry={nodes.stylus_blinn1_0.geometry}
         material={materials.blinn1}
       />
-      <mesh geometry={nodes.table_blinn1_0.geometry} material={tableMaterial} />
+      <mesh
+        geometry={nodes.table_blinn1_0.geometry}
+        material={ROOM_MATERIALS.table}
+      />
       <mesh
         geometry={nodes.tablet_blinn1_0.geometry}
         material={materials.blinn1}

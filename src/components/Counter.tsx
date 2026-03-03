@@ -1,19 +1,21 @@
+import type { CounterSuffix } from "@/types";
 import { useEffect, useState } from "react";
 
-type counterProps = {
-  id?: string;
+type CounterProps = {
   value: number;
-  suffix: "+" | "%" | "";
+  suffix: CounterSuffix;
   label: string;
 };
 
-export const Counter = ({ value, suffix, label }: counterProps) => {
-  const [count, setCount] = useState(0);
+const ANIMATION_DURATION_MS: number = 1000;
+const FRAME_INTERVAL_MS: number = 16;
+
+export const Counter = ({ value, suffix, label }: CounterProps) => {
+  const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
     let start = 0;
-    const duration = 1000;
-    const increment = value / (duration / 16);
+    const increment = value / (ANIMATION_DURATION_MS / FRAME_INTERVAL_MS);
 
     const timer = setInterval(() => {
       start += increment;
@@ -23,7 +25,7 @@ export const Counter = ({ value, suffix, label }: counterProps) => {
       } else {
         setCount(Math.floor(start));
       }
-    }, 16);
+    }, FRAME_INTERVAL_MS);
 
     return () => clearInterval(timer);
   }, [value]);

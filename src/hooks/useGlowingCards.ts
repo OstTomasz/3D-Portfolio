@@ -1,11 +1,14 @@
-// hooks/useGlowingCards.ts
-import { useRef } from "react";
+import { useRef, type MouseEvent } from "react";
 
 export const useGlowingCards = () => {
   const cardRefs = useRef<HTMLDivElement[]>([]);
 
+  const setCardRef = (index: number) => (el: HTMLDivElement | null) => {
+    if (el) cardRefs.current[index] = el;
+  };
+
   const handleMouseMove =
-    (index: number) => (e: React.MouseEvent<HTMLDivElement>) => {
+    (index: number) => (e: MouseEvent<HTMLDivElement>) => {
       const card = cardRefs.current[index];
       if (!card) return;
       const rect = card.getBoundingClientRect();
@@ -16,5 +19,5 @@ export const useGlowingCards = () => {
       card.style.setProperty("--start", `${angle + 55}`);
     };
 
-  return { cardRefs, handleMouseMove };
+  return { handleMouseMove, setCardRef };
 };

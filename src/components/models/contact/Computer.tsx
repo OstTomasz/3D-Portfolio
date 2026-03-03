@@ -28,5 +28,3 @@ export const Computer = (props: ThreeElements["group"]) => {
 };
 
 useGLTF.preload("/models/computer-optimized-transformed.glb");
-
-export default Computer;

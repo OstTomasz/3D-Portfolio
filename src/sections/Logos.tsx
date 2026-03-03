@@ -1,5 +1,6 @@
 import { logoIconsList } from "@/constants/constants";
 
+const doubledLogos = [...logoIconsList, ...logoIconsList];
 export const Logos = () => {
   return (
     <section className="md:my-20 my-10 relative">
@@ -8,20 +9,12 @@ export const Logos = () => {
 
       <div className="marquee h-52">
         <div className="marquee-box md:gap-12 gap-5">
-          {logoIconsList.map(({ imgPath, id }) => (
+          {doubledLogos.map(({ imgPath, id }, index) => (
             <img
               className="flex-none flex-center marquee-item"
-              key={`1-${id}`}
+              key={`${index}-${id}`}
               src={imgPath}
-              alt={id}
-            />
-          ))}
-          {logoIconsList.map(({ imgPath, id }) => (
-            <img
-              className="flex-none flex-center marquee-item"
-              key={`2-${id}`}
-              src={imgPath}
-              alt={id}
+              alt=""
             />
           ))}
         </div>

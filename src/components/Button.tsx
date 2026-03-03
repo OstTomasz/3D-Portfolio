@@ -1,21 +1,22 @@
+import type { MouseEventHandler } from "react";
 type ButtonProps = {
-  classes?: string;
+  className?: string;
   text: string;
   id?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
 };
 
 export const Button = ({
-  classes,
+  className,
   text,
   id,
   onClick,
   type = "button",
   disabled,
 }: ButtonProps) => {
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     if (onClick) {
       onClick(e);
     } else if (id) {
@@ -34,7 +35,7 @@ export const Button = ({
       id={id}
       type={type}
       disabled={disabled}
-      className={`${classes ?? ""} cta-wrapper`}
+      className={`${className ?? ""} cta-wrapper`}
       onClick={handleClick}
     >
       <div className="cta-button group">

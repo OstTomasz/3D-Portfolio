@@ -201,8 +201,12 @@ section {
     .project-list-wrapper {
       @apply flex md:flex-row flex-col gap-10 2xl:w-[40%] 2xl:flex-col w-full 2xl:gap-0 2xl:justify-around;
 
+      & > a {
+        @apply w-full md:w-1/2 2xl:w-full;
+      }
+
       .image-wrapper {
-        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+        @apply relative rounded-xl xl:px-5 2xl:px-12 py-0 w-full md:h-[35vh] h-48;
       }
 
       img {
@@ -263,7 +267,7 @@ section {
   }
 
   .timeline-wrapper {
-    @apply absolute top-0 xl:left-[35.5vw] md:left-10 left-5 h-full flex justify-center;
+    @apply absolute top-0 xl:left-[40.5%] md:left-10 left-5 h-full flex justify-center;
   }
 
   .timeline {
@@ -275,7 +279,7 @@ section {
   }
 
   .exp-card-wrapper {
-    @apply flex flex-col-reverse xl:flex-row 4xl:gap-25 3xl:gap-22 2xl:gap-20 xl:gap-18 gap-10 justify-between;
+    @apply flex flex-col-reverse xl:flex-row 2xl:gap-20 xl:gap-18 gap-10 justify-between;
   }
 
   .gradient-edge {
@@ -466,4 +470,13 @@ section {
 
 .card:hover::before {
   opacity: 1;
+}
+
+@keyframes spin360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

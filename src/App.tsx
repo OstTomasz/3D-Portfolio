@@ -1,16 +1,13 @@
 import { Toaster } from "react-hot-toast";
 
-import { NavBar } from "./components/Navbar";
-import { Hero } from "./sections/Hero";
-import { Showcase } from "./sections/Showcase";
-// import { Logos } from "./sections/Logos";
-import { Features } from "./sections/Features";
-import { Experience } from "./sections/Experience";
-import { TechStack } from "./sections/TechStack";
-import { Contact } from "./sections/Contact";
-// import { Testemonials } from "./sections/Testemonials";
-
-import { Footer } from "./sections/Footer";
+import { NavBar } from "@/components/Navbar";
+import { Hero } from "@/sections/Hero";
+import { Showcase } from "@/sections/Showcase";
+import { Features } from "@/sections/Features";
+import { Experience } from "@/sections/Experience";
+import { TechStack } from "@/sections/TechStack";
+import { Contact } from "@/sections/Contact";
+import { Footer } from "@/sections/Footer";
 
 export const App = () => {
   return (
@@ -20,11 +17,11 @@ export const App = () => {
       <main>
         <Hero />
         <Showcase />
-        {/* <Logos /> <== scrollbar with companies that I worked witch - add after any work experience*/}
+        {/* <Logos /> <== scrollbar with companies that I worked with - add after any work experience*/}
         <Features />
         <Experience />
         <TechStack />
-        {/* <Testemonials /> <== section with clients review - add after some clients work */}
+        {/* <Testimonials /> <== section with clients review - add after some clients work */}
         <Contact />
       </main>
       <Footer />

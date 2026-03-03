@@ -1,45 +1,20 @@
-import { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { GitHubButton } from "@/components/GitHubButton";
+import { projects } from "@/constants/constants";
+import { useShowcaseAnimations } from "@/hooks/useShowcaseAnimations";
 
-gsap.registerPlugin(ScrollTrigger);
+const GITHUB_URL = "https://www.github.com/OstTomasz";
 
 export const Showcase = () => {
-  const sectionRef = useRef(null);
-  const project1Ref = useRef(null);
-  const project2Ref = useRef(null);
-  const project3Ref = useRef(null);
-  const githubRef = useRef(null);
+  const {
+    sectionRef,
+    project1Ref,
+    project2Ref,
+    project3Ref,
+    githubDesktopRef,
+    githubMobileRef,
+  } = useShowcaseAnimations();
 
-  useGSAP(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1 },
-    );
-
-    const projects = [
-      project1Ref.current,
-      project2Ref.current,
-      project3Ref.current,
-      githubRef.current,
-    ];
-
-    projects.forEach((project, index) => {
-      gsap.fromTo(
-        project,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          delay: 0.2 * (index + 1),
-          scrollTrigger: { trigger: project, start: "top bottom-=100" },
-        },
-      );
-    });
-  }, []);
+  const [project1, project2, project3] = projects;
 
   return (
     <section id="work" ref={sectionRef} className="app-showcase">
@@ -48,37 +23,35 @@ export const Showcase = () => {
           {/* Left - Main Project */}
           <div className="first-project-col">
             <a
-              className="first-project-wrapper transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105"
-              href="https://www.google.com"
+              className="first-project-wrapper relative transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105"
+              href={project1.liveLink}
               target="_blank"
+              rel="noreferrer"
             >
               <div
                 ref={project1Ref}
-                className="border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+                className="relative border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
               >
+                <GitHubButton href={project1.githubLink} />
                 <div className="image-wrapper">
-                  <img src="/images/project1.png" alt="Ryde" />
+                  <img src={project1.imgPath} alt={project1.title} />
                 </div>
                 <div className="text-content">
-                  <h2>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Tempora, voluptate!
-                  </h2>
-                  <p className="text-white-50 md:text-xl">
-                    Lorem ipsum dolor sit amet.
-                  </p>
+                  <h2>{project1.title}</h2>
+                  <p className="text-white-50 md:text-xl">{project1.desc}</p>
                 </div>
               </div>
             </a>
 
-            {/* GitHub Link - tylko w dwukolumnowym */}
+            {/* GitHub Link - desktop only */}
             <a
-              href="https://www.github.com/OstTomasz"
+              href={GITHUB_URL}
               target="_blank"
-              className="github-link-wrapper hidden 2xl:block transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105;"
+              rel="noreferrer"
+              className="github-link-wrapper hidden 2xl:block transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105"
             >
               <div
-                ref={githubRef}
+                ref={githubDesktopRef}
                 className="border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex-col-center"
               >
                 <div className="mb-4">
@@ -94,56 +67,57 @@ export const Showcase = () => {
           {/* Right - Project List */}
           <div className="project-list-wrapper">
             <a
-              href="https://www.google.com"
+              href={project2.liveLink}
               target="_blank"
-              className="transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105;"
+              rel="noreferrer"
+              className="relative transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block"
             >
               <div
                 ref={project2Ref}
-                className="project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+                className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
               >
+                <GitHubButton href={project2.githubLink} />
                 <div className="image-wrapper">
-                  <img
-                    src="/images/project2.png"
-                    alt="Library Management Platform"
-                  />
+                  <img src={project2.imgPath} alt={project2.title} />
                 </div>
                 <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mt-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Error, iusto quo? Numquam voluptas neque inventore obcaecati
-                  illum, voluptates accusantium odit!
+                  {project2.title}
                 </h2>
+                <p className="text-white-50 md:text-xl mt-2">{project2.desc}</p>
               </div>
             </a>
+
             <a
-              href="https://www.google.com"
+              href={project3.liveLink}
               target="_blank"
-              className="transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105;"
+              rel="noreferrer"
+              className="relative transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block"
             >
               <div
                 ref={project3Ref}
-                className="project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+                className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
               >
+                <GitHubButton href={project3.githubLink} />
                 <div className="image-wrapper">
-                  <img src="/images/project3.png" alt="YC Directory" />
+                  <img src={project3.imgPath} alt={project3.title} />
                 </div>
                 <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mt-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Error, iusto quo? Numquam voluptas neque inventore obcaecati
-                  illum, voluptates accusantium odit!
+                  {project3.title}
                 </h2>
+                <p className="text-white-50 md:text-xl mt-2">{project3.desc}</p>
               </div>
             </a>
           </div>
 
-          {/* GitHub Link - na końcu dla mobilnego/tabletu */}
+          {/* GitHub Link - mobile/tablet */}
           <a
-            href="https://www.github.com/OstTomasz"
+            href={GITHUB_URL}
             target="_blank"
-            className="github-link-wrapper block 2xl:hidden w-full transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105;"
+            rel="noreferrer"
+            className="github-link-wrapper block 2xl:hidden w-full transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105"
           >
             <div
-              ref={githubRef}
+              ref={githubMobileRef}
               className="border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex-col-center"
             >
               <div className="mb-4">

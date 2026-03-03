@@ -6,7 +6,6 @@ export const HeroLights = () => {
         position={[12, 10, 7]}
         angle={0.2}
         intensity={800}
-        color="#fff"
         penumbra={0.8}
       />
     </>

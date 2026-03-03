@@ -1,14 +1,27 @@
+import {
+  useThreeMaterialOverride,
+  type MaterialOverride,
+} from "@/hooks/useThreeMaterialOverride";
+import { useWindowSize } from "@/hooks/useWindowSize";
 import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useEffect } from "react";
 import * as THREE from "three";
 
 type TechIconProps = {
   iconName: string;
   modelPath: string;
   scale: number;
-  rotation: readonly [number, number, number];
+  rotation: [number, number, number];
 };
+
+const THREEJS_LOGO_OVERRIDE: MaterialOverride[] = [
+  {
+    meshName: "Object_5",
+    material: new THREE.MeshStandardMaterial({ color: "#000080" }),
+  },
+];
+
+const EMPTY_OVERRIDES: MaterialOverride[] = [];
 
 export const TechIcon = ({
   iconName,
@@ -18,19 +31,14 @@ export const TechIcon = ({
 }: TechIconProps) => {
   const scene = useGLTF(modelPath);
 
-  useEffect(() => {
-    if (iconName === "Interactive Developer") {
-      scene.scene.traverse((child) => {
-        if (child instanceof THREE.Mesh && child.name === "Object_5") {
-          child.material = new THREE.MeshStandardMaterial({
-            color: "#000080",
-          });
-        }
-      });
-    }
-  }, [scene, iconName]);
+  const shouldOverride = iconName === "Interactive Developer";
+  useThreeMaterialOverride(
+    scene.scene,
+    shouldOverride ? THREEJS_LOGO_OVERRIDE : EMPTY_OVERRIDES,
+  );
 
-  const responsiveScale = window.innerWidth < 1500 ? scale : scale * 1.2;
+  const { width } = useWindowSize();
+  const responsiveScale = width < 1500 ? scale : scale * 1.2;
 
   return (
     <Canvas>

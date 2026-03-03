@@ -1,9 +1,9 @@
-import { forwardRef, type ReactNode } from "react";
+import { forwardRef, type MouseEventHandler, type ReactNode } from "react";
 
 type GlowingCardProps = {
   review: string;
   children: ReactNode;
-  onMouseMove?: React.MouseEventHandler<HTMLDivElement>;
+  onMouseMove?: MouseEventHandler<HTMLDivElement>;
 };
 
 export const GlowingCard = forwardRef<HTMLDivElement, GlowingCardProps>(
@@ -17,7 +17,12 @@ export const GlowingCard = forwardRef<HTMLDivElement, GlowingCardProps>(
         <div className="glow" />
         <div className="flex items-center gap-1 mb-5">
           {Array.from({ length: 5 }, (_, i) => (
-            <img src="images/star.png" key={i} alt="Star" className="size-5" />
+            <img
+              src="images/star.png"
+              key={`star-${i}`}
+              alt="Star"
+              className="size-5"
+            />
           ))}
         </div>
         <p className="mb-5 text-white-50 text-lg">{review}</p>

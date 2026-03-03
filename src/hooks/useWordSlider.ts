@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 
-export const useWordSlider = (ref: React.RefObject<HTMLDivElement>) => {
+export const useWordSlider = (ref: React.RefObject<HTMLDivElement | null>) => {
   useEffect(() => {
     if (!ref.current) return;
 
@@ -10,11 +10,14 @@ export const useWordSlider = (ref: React.RefObject<HTMLDivElement>) => {
     const startAnimation = () => {
       if (!ref.current) return;
 
-      tl?.kill(); // zatrzymaj poprzednią animację
+      tl?.kill();
       gsap.set(ref.current, { y: 0 });
 
       const items = ref.current.children;
-      const itemHeight = (items[0] as HTMLElement).offsetHeight;
+      const firstItem = items[0];
+      if (!(firstItem instanceof HTMLElement)) return;
+      const itemHeight = firstItem.offsetHeight;
+      // words array is duplicated in constants to create seamless loop
       const uniqueCount = items.length / 2;
 
       tl = gsap.timeline({ repeat: -1, delay: 1 });
@@ -24,7 +27,7 @@ export const useWordSlider = (ref: React.RefObject<HTMLDivElement>) => {
           y: -itemHeight * (i + 1),
           duration: 1,
           ease: "power2.inOut",
-        }).to(ref.current, { duration: 2 });
+        }).to(ref.current, { duration: 1 });
       }
 
       tl.set(ref.current, { y: 0, immediateRender: false });

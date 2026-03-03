@@ -1,35 +1,28 @@
-export const navLinks: {
-  name: string;
-  link: `#${string}`;
-  id: `nav${number}`;
-}[] = [
-  {
-    name: "Work",
-    link: "#work",
-    id: "nav1",
-  },
-  {
-    name: "Experience",
-    link: "#experience",
-    id: "nav2",
-  },
-  {
-    name: "Skills",
-    link: "#skills",
-    id: "nav3",
-  },
-  // {
-  //   name: "Testimonials",
-  //   link: "#testimonials",
-  //   id: "nav4",
-  // },
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MeshPhongMaterial, MeshStandardMaterial } from "three";
+
+import type {
+  NavLink,
+  Word,
+  CounterItem,
+  LogoIcon,
+  Ability,
+  ExpCard,
+  ExpLogo,
+  TechStackImg,
+  TechStackIcon,
+  Testimonial,
+  Social,
+  Project,
+} from "@/types";
+
+export const navLinks: NavLink[] = [
+  { name: "Work", link: "#work", id: "nav1" },
+  { name: "Experience", link: "#experience", id: "nav2" },
+  { name: "Skills", link: "#skills", id: "nav3" },
 ] as const;
 
-export const words: {
-  text: string;
-  imgPath: `./images/${string}`;
-  id: `word${number}`;
-}[] = [
+export const words: Word[] = [
   { text: "Ideas", imgPath: "./images/ideas.svg", id: "word1" },
   { text: "Concepts", imgPath: "./images/concepts.svg", id: "word2" },
   { text: "Designs", imgPath: "./images/designs.svg", id: "word3" },
@@ -40,16 +33,11 @@ export const words: {
   { text: "Code", imgPath: "./images/code.svg", id: "word8" },
 ] as const;
 
-export const counterItems: {
-  value: number;
-  suffix: "" | "+" | "%";
-  label: string;
-  id: `counter${number}`;
-}[] = [
+export const counterItems: CounterItem[] = [
   {
     value: 0,
     suffix: "",
-    label: "Years of proffesional experience",
+    label: "Years of professional experience",
     id: "counter1",
   },
   { value: 2, suffix: "+", label: "Years of study", id: "counter2" },
@@ -57,62 +45,48 @@ export const counterItems: {
   { value: 100, suffix: "%", label: "Commitment", id: "counter4" },
 ] as const;
 
-export const logoIconsList: {
-  imgPath: `./images/logos/${string}`;
-  id: `logo${number}`;
-}[] = [
+export const projects: Project[] = [
   {
-    imgPath: "./images/logos/company-logo-1.png",
-    id: "logo1",
+    id: "project1",
+    title: "Project 1",
+    desc: "Description of Project 1",
+    imgPath: "./images/project1.png",
+    liveLink: "https://example.com/project1",
+    githubLink: "https://github.com/username/project1",
   },
   {
-    imgPath: "./images/logos/company-logo-2.png",
-    id: "logo2",
+    id: "project2",
+    title: "Project 2",
+    desc: "Description of Project 2",
+    imgPath: "./images/project2.png",
+    liveLink: "https://example.com/project2",
+    githubLink: "https://github.com/username/project2",
   },
   {
-    imgPath: "./images/logos/company-logo-3.png",
-    id: "logo3",
+    id: "project3",
+    title: "Project 3",
+    desc: "Description of Project 3",
+    imgPath: "./images/project3.png",
+    liveLink: "https://example.com/project3",
+    githubLink: "https://github.com/username/project3",
   },
-  {
-    imgPath: "./images/logos/company-logo-4.png",
-    id: "logo4",
-  },
-  {
-    imgPath: "./images/logos/company-logo-5.png",
-    id: "logo5",
-  },
-  {
-    imgPath: "./images/logos/company-logo-6.png",
-    id: "logo6",
-  },
-  {
-    imgPath: "./images/logos/company-logo-7.png",
-    id: "logo7",
-  },
-  {
-    imgPath: "./images/logos/company-logo-8.png",
-    id: "logo8",
-  },
-  {
-    imgPath: "./images/logos/company-logo-9.png",
-    id: "logo9",
-  },
-  {
-    imgPath: "./images/logos/company-logo-10.png",
-    id: "logo10",
-  },
-  {
-    imgPath: "./images/logos/company-logo-11.png",
-    id: "logo11",
-  },
+];
+
+export const logoIconsList: LogoIcon[] = [
+  { imgPath: "./images/logos/company-logo-1.png", id: "logo1" },
+  { imgPath: "./images/logos/company-logo-2.png", id: "logo2" },
+  { imgPath: "./images/logos/company-logo-3.png", id: "logo3" },
+  { imgPath: "./images/logos/company-logo-4.png", id: "logo4" },
+  { imgPath: "./images/logos/company-logo-5.png", id: "logo5" },
+  { imgPath: "./images/logos/company-logo-6.png", id: "logo6" },
+  { imgPath: "./images/logos/company-logo-7.png", id: "logo7" },
+  { imgPath: "./images/logos/company-logo-8.png", id: "logo8" },
+  { imgPath: "./images/logos/company-logo-9.png", id: "logo9" },
+  { imgPath: "./images/logos/company-logo-10.png", id: "logo10" },
+  { imgPath: "./images/logos/company-logo-11.png", id: "logo11" },
 ] as const;
 
-export const abilities: {
-  imgPath: `./images/${string}`;
-  title: string;
-  desc: string;
-  id: `ability${number}`;
-}[] = [
+export const abilities: Ability[] = [
   {
     imgPath: "./images/seo.png",
     title: "Quality Focus",
@@ -133,15 +107,7 @@ export const abilities: {
   },
 ] as const;
 
-export const expCards: {
-  review: string;
-  imgPath: `./images/${string}`;
-  logoPath: `./images/${string}`;
-  title: string;
-  date: string;
-  responsibilities: string[];
-  id: `experience${string}`;
-}[] = [
+export const expCards: ExpCard[] = [
   {
     review:
       "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
@@ -158,7 +124,7 @@ export const expCards: {
   },
   {
     review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+      "Adrian's contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
     imgPath: "./images/exp2.png",
     logoPath: "./images/logo2.png",
     title: "Full Stack Developer",
@@ -172,7 +138,7 @@ export const expCards: {
   },
   {
     review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+      "Adrian's work on Appwrite's mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
     imgPath: "./images/exp3.png",
     logoPath: "./images/logo3.png",
     title: "React Native Developer",
@@ -186,33 +152,13 @@ export const expCards: {
   },
 ] as const;
 
-export const expLogos: {
-  name: string;
-  imgPath: `./images/${string}`;
-  id: `expLogo${number}`;
-}[] = [
-  {
-    name: "logo1",
-    imgPath: "./images/logo1.png",
-    id: "expLogo1",
-  },
-  {
-    name: "logo2",
-    imgPath: "./images/logo2.png",
-    id: "expLogo2",
-  },
-  {
-    name: "logo3",
-    imgPath: "./images/logo3.png",
-    id: "expLogo3",
-  },
+export const expLogos: ExpLogo[] = [
+  { name: "logo1", imgPath: "./images/logo1.png", id: "expLogo1" },
+  { name: "logo2", imgPath: "./images/logo2.png", id: "expLogo2" },
+  { name: "logo3", imgPath: "./images/logo3.png", id: "expLogo3" },
 ] as const;
 
-export const techStackImgs: {
-  name: string;
-  imgPath: `./images/${string}`;
-  id: `techImg${number}`;
-}[] = [
+export const techStackImgs: TechStackImg[] = [
   {
     name: "React Developer",
     imgPath: "./images/logos/react.png",
@@ -240,13 +186,7 @@ export const techStackImgs: {
   },
 ] as const;
 
-export const techStackIcons: {
-  name: string;
-  modelPath: `./models/${string}`;
-  scale: number;
-  rotation: [number, number, number];
-  id: `techIcon${number}`;
-}[] = [
+export const techStackIcons: TechStackIcon[] = [
   {
     name: "React Developer",
     modelPath: "./models/react_logo-transformed.glb",
@@ -284,18 +224,12 @@ export const techStackIcons: {
   },
 ] as const;
 
-export const testimonials: {
-  name: string;
-  mentions: `@${string}`;
-  review: string;
-  imgPath: `./images/${string}`;
-  id: `testimonial${number}`;
-}[] = [
+export const testimonials: Testimonial[] = [
   {
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "I can't say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
     imgPath: "./images/client1.png",
     id: "testimonial1",
   },
@@ -319,7 +253,7 @@ export const testimonials: {
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
     imgPath: "./images/client5.png",
     id: "testimonial4",
   },
@@ -327,7 +261,7 @@ export const testimonials: {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Adrian's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
     imgPath: "./images/client4.png",
     id: "testimonial5",
   },
@@ -341,15 +275,7 @@ export const testimonials: {
   },
 ] as const;
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import type { IconType } from "react-icons";
-
-export const socials: {
-  name: string;
-  icon: IconType;
-  site: string;
-  id: `socialImg${number}`;
-}[] = [
+export const socials: Social[] = [
   {
     name: "github",
     icon: FaGithub,
@@ -362,4 +288,14 @@ export const socials: {
     site: "https://www.linkedin.com/in/tomasz-ostaszewski-7166071aa/",
     id: "socialImg2",
   },
-];
+] as const;
+
+export const ROOM_MATERIALS = {
+  curtain: new MeshPhongMaterial({ color: "#00c9bc" }),
+  body: new MeshPhongMaterial({ color: "#a7a8a7" }),
+  table: new MeshPhongMaterial({ color: "#912c2c" }),
+  radiator: new MeshPhongMaterial({ color: "#fff" }),
+  comp: new MeshStandardMaterial({ color: "#444" }),
+  pillow: new MeshPhongMaterial({ color: "#333" }),
+  chair: new MeshPhongMaterial({ color: "#000" }),
+} as const;

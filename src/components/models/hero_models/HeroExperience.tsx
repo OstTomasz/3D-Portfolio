@@ -3,9 +3,14 @@ import { Canvas } from "@react-three/fiber";
 import { Room } from "./Room";
 import { HeroLights } from "./HeroLights";
 
+const HERO_CAMERA = { position: [8, 6, 8] as const, fov: 45 };
+const ROOM_TRANSFORM = {
+  rotation: [0, -Math.PI / 10, 0] as const,
+  position: [0, -1.7, 0] as const,
+};
 export const HeroExperience = () => {
   return (
-    <Canvas camera={{ position: [8, 6, 8], fov: 45 }}>
+    <Canvas camera={HERO_CAMERA}>
       <OrbitControls
         enablePan={false}
         enableZoom={false}
@@ -15,7 +20,7 @@ export const HeroExperience = () => {
         maxAzimuthAngle={Math.PI / 3}
       />
       <HeroLights />
-      <group rotation={[0, -Math.PI / 10, 0]} position={[0, -1.7, 0]}>
+      <group {...ROOM_TRANSFORM}>
         <Room />
       </group>
     </Canvas>

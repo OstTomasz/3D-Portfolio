@@ -3,11 +3,11 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { ContactExperience } from "@/components/models/contact/ContactExperience";
 import { TitleHeader } from "@/components/TitleHeader";
-
-import { useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/Button";
+import { FormField, type ContactFormData } from "@/components/FormField";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -15,13 +15,12 @@ const formSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
-type FormData = z.infer<typeof formSchema>;
-
 const SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID_USER = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID_USER;
 const TEMPLATE_ID_OWNER = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID_OWNER;
 const PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
 
+// initialize emailjs once at module level, not inside component
 emailjs.init(PUBLIC_KEY);
 
 export const Contact = () => {
@@ -33,12 +32,12 @@ export const Contact = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
     mode: "onTouched",
   });
 
-  const onSubmit = async () => {
+  const onSubmit: SubmitHandler<ContactFormData> = async () => {
     if (!formRef.current) return;
     setLoading(true);
 
@@ -49,7 +48,7 @@ export const Contact = () => {
       toast.success(
         "Message sent successfully! Check your email for confirmation.",
       );
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("EmailJS Error:", error);
       toast.error(
         "Something went wrong. Try again or contact me directly: ost.tomasz@gmail.com",
@@ -63,8 +62,8 @@ export const Contact = () => {
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
-          title="Get in Touch – Let’s Connect"
-          subtitle="💬 Have questions or ideas? Let’s talk! 🚀"
+          title="Get in Touch – Let's Connect"
+          subtitle="💬 Have questions or ideas? Let's talk! 🚀"
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
@@ -75,46 +74,30 @@ export const Contact = () => {
                 className="w-full flex flex-col gap-7"
                 autoComplete="off"
               >
-                <div>
-                  <label htmlFor="name">Your name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="What's your name?"
-                    autoComplete="off"
-                    {...register("name")}
-                  />
-                  <p className="text-red-500 text-sm mt-1 min-h-5">
-                    {errors.name?.message}
-                  </p>
-                </div>
-
-                <div>
-                  <label htmlFor="email">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="What's your email address?"
-                    autoComplete="off"
-                    {...register("email")}
-                  />
-                  <p className="text-red-500 text-sm mt-1 min-h-5">
-                    {errors.email?.message}
-                  </p>
-                </div>
-
-                <div>
-                  <label htmlFor="message">Your Message</label>
-                  <textarea
-                    id="message"
-                    placeholder="How can I help you?"
-                    rows={5}
-                    {...register("message")}
-                  />
-                  <p className="text-red-500 text-sm mt-1 min-h-5">
-                    {errors.message?.message}
-                  </p>
-                </div>
+                <FormField
+                  id="name"
+                  label="Your name"
+                  placeholder="What's your name?"
+                  error={errors.name?.message}
+                  register={register}
+                />
+                <FormField
+                  id="email"
+                  label="Your Email"
+                  placeholder="What's your email address?"
+                  type="email"
+                  error={errors.email?.message}
+                  register={register}
+                />
+                <FormField
+                  id="message"
+                  label="Your Message"
+                  placeholder="How can I help you?"
+                  type="textarea"
+                  rows={5}
+                  error={errors.message?.message}
+                  register={register}
+                />
 
                 <input
                   type="hidden"
