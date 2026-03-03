@@ -5,9 +5,15 @@
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
-  width: 100dvw;
+  width: 100%;
   overflow-x: hidden;
   background-color: var(--color-black-100);
   color: var(--color-white-50);
@@ -17,7 +23,7 @@ body {
 }
 
 section {
-  width: 100dvw;
+  width: 100%;
 }
 
 @theme {
@@ -102,7 +108,7 @@ section {
   }
 
   .hero-3d-layout {
-    @apply xl:w-[55%] w-full md:h-150 h-90 absolute xl:top-0 md:top-110 top-75 xl:right-20 right-0;
+    @apply xl:w-[55%] w-full md:h-150 h-85 absolute xl:top-0 md:top-110 top-85 xl:right-20 right-0;
   }
 
   .navbar {

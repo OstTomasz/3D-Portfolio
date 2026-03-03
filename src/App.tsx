@@ -1,3 +1,5 @@
+import { Toaster } from "react-hot-toast";
+
 import { NavBar } from "./components/Navbar";
 import { Hero } from "./sections/Hero";
 import { Showcase } from "./sections/Showcase";
@@ -8,13 +10,12 @@ import { TechStack } from "./sections/TechStack";
 import { Contact } from "./sections/Contact";
 // import { Testemonials } from "./sections/Testemonials";
 
-import { Toaster } from "react-hot-toast";
 import { Footer } from "./sections/Footer";
 
 export const App = () => {
   return (
     <>
-      <Toaster position="top-right" />;
+      <Toaster position="top-right" />
       <NavBar />
       <main>
         <Hero />
