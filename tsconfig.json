@@ -7,6 +7,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": { "@/*": ["src/*"] },
-    "strict": true
+    "strict": true,
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "types": ["node"]
   }
 }
