@@ -27,7 +27,7 @@ export const ExperienceCard = ({
           review={review}
           onMouseMove={handleMouseMove(index)}
         >
-          <img src={imgPath} alt={title} />
+          <img src={imgPath} alt={title} width={150} />
         </GlowingCard>
       </div>
       <div className="xl:w-4/6">
@@ -39,7 +39,7 @@ export const ExperienceCard = ({
 
           <div className="flex xl:gap-20 md:gap-10 gap-5 relative z-20">
             <div className="timeline-logo">
-              <img src={logoPath} alt="logo" />
+              <img src={logoPath} alt="logo" width={70} />
             </div>
 
             <div className="exp-text">
