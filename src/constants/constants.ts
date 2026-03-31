@@ -48,27 +48,27 @@ export const counterItems: CounterItem[] = [
 export const projects: Project[] = [
   {
     id: "project1",
-    title: "Project 1",
-    desc: "Description of Project 1",
-    imgPath: "./images/project1.png",
-    liveLink: "https://example.com/project1",
-    githubLink: "https://github.com/username/project1",
+    title: "Seller CRM",
+    desc: "A professional Full-stack CRM application designed to streamline client management and sales workflows. The system enables sales teams to efficiently track interactions and manage customer data within a scalable, modern environment.",
+    imgPath: "./images/seller.avif",
+    liveLink: "https://github.com/OstTomasz/Seller",
+    githubLink: "https://github.com/OstTomasz/Seller",
   },
   {
     id: "project2",
-    title: "Project 2",
-    desc: "Description of Project 2",
-    imgPath: "./images/project2.png",
-    liveLink: "https://example.com/project2",
-    githubLink: "https://github.com/username/project2",
+    title: "WebStudio Portfolio",
+    desc: "Modern SPA built with React 19 and TypeScript. Developed with a focus on Clean Code and performance. Features advanced forms (Zod), Framer Motion animations and responsiveness. An ideal foundation for scalable projects.",
+    imgPath: "./images/webstudio.avif",
+    liveLink: "https://own-landing-page-tsx-saa-s.vercel.app/",
+    githubLink: "https://github.com/OstTomasz/Own-LandingPage-TSX-SaaS",
   },
   {
     id: "project3",
-    title: "Project 3",
-    desc: "Description of Project 3",
-    imgPath: "./images/project3.png",
-    liveLink: "https://example.com/project3",
-    githubLink: "https://github.com/username/project3",
+    title: "Cinemania",
+    desc: "Cinemania is a responsive web application for casual movie lovers who want to explore the world of cinema with ease. Browse trending films, discover upcoming releases, search for any title, watch trailers, and build your personal watchlist.",
+    imgPath: "./images/cinemania.avif",
+    liveLink: "https://magdalenasiniawska.github.io/cinemania_gr2/index.html",
+    githubLink: "https://github.com/OstTomasz/GoIT-Cinemania-JS-Group",
   },
 ];
 
@@ -299,3 +299,5 @@ export const ROOM_MATERIALS = {
   pillow: new MeshPhongMaterial({ color: "#333" }),
   chair: new MeshPhongMaterial({ color: "#000" }),
 } as const;
+
+export const GITHUB_URL = "https://www.github.com/OstTomasz";

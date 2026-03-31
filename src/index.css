@@ -199,7 +199,7 @@ section {
     }
 
     .project-list-wrapper {
-      @apply flex md:flex-row flex-col gap-10 2xl:w-[40%] 2xl:flex-col w-full 2xl:gap-0 2xl:justify-around;
+      @apply flex md:flex-row flex-col gap-10 2xl:w-[40%] 2xl:flex-col w-full 2xl:gap-5 3xl:gap-0 2xl:justify-around;
 
       & > a {
         @apply w-full md:w-1/2 2xl:w-full;

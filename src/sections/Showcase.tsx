@@ -1,8 +1,6 @@
 import { GitHubButton } from "@/components/GitHubButton";
-import { projects } from "@/constants/constants";
+import { GITHUB_URL, projects } from "@/constants/constants";
 import { useShowcaseAnimations } from "@/hooks/useShowcaseAnimations";
-
-const GITHUB_URL = "https://www.github.com/OstTomasz";
 
 export const Showcase = () => {
   const {
@@ -22,26 +20,28 @@ export const Showcase = () => {
         <div className="showcaselayout">
           {/* Left - Main Project */}
           <div className="first-project-col">
-            <a
-              className="first-project-wrapper relative transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105"
-              href={project1.liveLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                ref={project1Ref}
-                className="relative border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+            <div className="relative ">
+              <GitHubButton href={project1.githubLink} />
+              <a
+                className="first-project-wrapper transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105"
+                href={project1.liveLink}
+                target="_blank"
+                rel="noreferrer"
               >
-                <GitHubButton href={project1.githubLink} />
-                <div className="image-wrapper">
-                  <img src={project1.imgPath} alt={project1.title} />
+                <div
+                  ref={project1Ref}
+                  className="relative border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+                >
+                  <div className="image-wrapper">
+                    <img src={project1.imgPath} alt={project1.title} />
+                  </div>
+                  <div className="text-content">
+                    <h2>{project1.title}</h2>
+                    <p className="text-white-50 md:text-xl">{project1.desc}</p>
+                  </div>
                 </div>
-                <div className="text-content">
-                  <h2>{project1.title}</h2>
-                  <p className="text-white-50 md:text-xl">{project1.desc}</p>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
 
             {/* GitHub Link - desktop only */}
             <a
@@ -66,47 +66,54 @@ export const Showcase = () => {
 
           {/* Right - Project List */}
           <div className="project-list-wrapper">
-            <a
-              href={project2.liveLink}
-              target="_blank"
-              rel="noreferrer"
-              className="relative transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block"
-            >
-              <div
-                ref={project2Ref}
-                className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+            <div className="relative">
+              <GitHubButton href={project2.githubLink} />
+              <a
+                href={project2.liveLink}
+                target="_blank"
+                rel="noreferrer"
+                className=" transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block"
               >
-                <GitHubButton href={project2.githubLink} />
-                <div className="image-wrapper">
-                  <img src={project2.imgPath} alt={project2.title} />
+                <div
+                  ref={project2Ref}
+                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+                >
+                  <div className="image-wrapper">
+                    <img src={project2.imgPath} alt={project2.title} />
+                  </div>
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mt-5">
+                    {project2.title}
+                  </h2>
+                  <p className="text-white-50 md:text-xl mt-2">
+                    {project2.desc}
+                  </p>
                 </div>
-                <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mt-5">
-                  {project2.title}
-                </h2>
-                <p className="text-white-50 md:text-xl mt-2">{project2.desc}</p>
-              </div>
-            </a>
-
-            <a
-              href={project3.liveLink}
-              target="_blank"
-              rel="noreferrer"
-              className="relative transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block"
-            >
-              <div
-                ref={project3Ref}
-                className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+              </a>
+            </div>
+            <div className="relative">
+              <GitHubButton href={project3.githubLink} />
+              <a
+                href={project3.liveLink}
+                target="_blank"
+                rel="noreferrer"
+                className="relative transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block"
               >
-                <GitHubButton href={project3.githubLink} />
-                <div className="image-wrapper">
-                  <img src={project3.imgPath} alt={project3.title} />
+                <div
+                  ref={project3Ref}
+                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
+                >
+                  <div className="image-wrapper">
+                    <img src={project3.imgPath} alt={project3.title} />
+                  </div>
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mt-5">
+                    {project3.title}
+                  </h2>
+                  <p className="text-white-50 md:text-xl mt-2">
+                    {project3.desc}
+                  </p>
                 </div>
-                <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mt-5">
-                  {project3.title}
-                </h2>
-                <p className="text-white-50 md:text-xl mt-2">{project3.desc}</p>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
 
           {/* GitHub Link - mobile/tablet */}

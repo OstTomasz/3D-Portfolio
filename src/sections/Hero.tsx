@@ -47,7 +47,7 @@ export const Hero = () => {
                   </span>
                 </span>
                 <br />
-                Into real projects <br />
+                into real projects <br />
                 that deliver results.
               </h1>
             </div>
