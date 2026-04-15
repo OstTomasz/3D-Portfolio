@@ -27,28 +27,34 @@ export const Hero = () => {
         <div className="flex flex-col justify-center xl:w-1/2 md:w-full w-screen xl:px-0 xl:pl-15 md:px-20 px-5">
           <div className="flex flex-col items-center xl:items-start gap-7">
             <div className="hero-text">
-              <h1>
+              <h1 className="text-white">
                 Shaping
                 <span className="slide">
                   <span className="wrapper" ref={wrapperRef}>
-                    {words.map(({ text, imgPath, id }) => (
+                    {words.map(({ text, icon: Icon, id }) => (
                       <span
                         key={id}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
+                        className="flex items-center md:gap-3 gap-1 pb-2 group"
                       >
-                        <img
-                          src={imgPath}
-                          alt={text}
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                        />
+                        <div
+                          className="relative xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white/5 border border-white/10 flex items-center justify-center
+                            shadow-[0_0_15px_rgba(96,165,250,0.3)] group-hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300"
+                        >
+                          <Icon
+                            className="w-full h-full"
+                            style={{ stroke: "url(#blue-gradient)" }}
+                            strokeWidth={2.5}
+                          />
+                        </div>
                         <span className="pr-4">{text}</span>
                       </span>
                     ))}
                   </span>
                 </span>
                 <br />
-                into real projects <br />
-                that deliver results.
+                into robust products that
+                <br />
+                turn problems into solutions.
               </h1>
             </div>
             <p className="xl:pb-15 xl:text-start text-center md:text-xl xl:text-2xl relative z-10 pointer-events-none">

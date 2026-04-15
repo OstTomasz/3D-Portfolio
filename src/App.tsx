@@ -8,6 +8,7 @@ import { Experience } from "@/sections/Experience";
 import { TechStack } from "@/sections/TechStack";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
+import { IconGradient } from "./components/IconGradient";
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
       <Toaster position="top-right" />
       <NavBar />
       <main>
+        <IconGradient />
         <Hero />
         <Showcase />
         {/* <Logos /> <== scrollbar with companies that I worked with - add after any work experience*/}

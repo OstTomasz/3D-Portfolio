@@ -1,5 +1,15 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MeshPhongMaterial, MeshStandardMaterial } from "three";
+import {
+  FastForward,
+  Search,
+  Brain,
+  Zap,
+  Layers,
+  Palette,
+  CodeXml,
+  BrainCircuit,
+} from "lucide-react";
 
 import type {
   NavLink,
@@ -23,26 +33,41 @@ export const navLinks: NavLink[] = [
 ] as const;
 
 export const words: Word[] = [
-  { text: "Ideas", imgPath: "./images/ideas.svg", id: "word1" },
-  { text: "Concepts", imgPath: "./images/concepts.svg", id: "word2" },
-  { text: "Designs", imgPath: "./images/designs.svg", id: "word3" },
-  { text: "Code", imgPath: "./images/code.svg", id: "word4" },
-  { text: "Ideas", imgPath: "./images/ideas.svg", id: "word5" },
-  { text: "Concepts", imgPath: "./images/concepts.svg", id: "word6" },
-  { text: "Designs", imgPath: "./images/designs.svg", id: "word7" },
-  { text: "Code", imgPath: "./images/code.svg", id: "word8" },
+  { text: "Ideas", icon: Brain, id: "word1" },
+  { text: "Concepts", icon: Layers, id: "word2" },
+  { text: "Designs", icon: Palette, id: "word3" },
+  { text: "Code", icon: CodeXml, id: "word4" },
+  { text: "Ideas", icon: Brain, id: "word5" },
+  { text: "Concepts", icon: Layers, id: "word6" },
+  { text: "Designs", icon: Palette, id: "word7" },
+  { text: "Code", icon: CodeXml, id: "word8" },
 ] as const;
 
 export const counterItems: CounterItem[] = [
   {
-    value: 0,
-    suffix: "",
-    label: "Years of professional experience",
+    value: 1000,
+    suffix: "+",
+    label: "Hours of intensive coding",
     id: "counter1",
   },
-  { value: 2, suffix: "+", label: "Years of study", id: "counter2" },
-  { value: 10, suffix: "+", label: "Completed projects", id: "counter3" },
-  { value: 100, suffix: "%", label: "Commitment", id: "counter4" },
+  {
+    value: 3.5,
+    suffix: "+",
+    label: "Years of learning & building",
+    id: "counter2",
+  },
+  {
+    value: 15,
+    suffix: "+",
+    label: "Projects in GitHub ecosystem",
+    id: "counter3",
+  },
+  {
+    value: 5,
+    suffix: "",
+    label: "Modern tech-stack skills",
+    id: "counter4",
+  },
 ] as const;
 
 export const projects: Project[] = [
@@ -88,22 +113,28 @@ export const logoIconsList: LogoIcon[] = [
 
 export const abilities: Ability[] = [
   {
-    imgPath: "./images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
+    icon: Zap,
+    title: "Senior Support & Efficiency",
+    desc: "I offload senior developers by handling UI/UX and testing, allowing the core team to focus on complex architectural challenges.",
     id: "ability1",
   },
   {
-    imgPath: "./images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
+    icon: BrainCircuit,
+    title: "AI-Driven Productivity",
+    desc: "Leveraging AI tools for rapid prototyping and automation to deliver high-quality features with a significantly faster turnaround.",
     id: "ability2",
   },
   {
-    imgPath: "./images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
+    icon: Search,
+    title: "Fresh Perspective QA",
+    desc: "Bringing a 'clean slate' approach to identify UX inconsistencies and edge cases that established teams might overlook.",
     id: "ability3",
+  },
+  {
+    icon: FastForward,
+    title: "Rapid Adaptability",
+    desc: "Demonstrated ability to master new tech stacks (MERN, TS) rapidly, ensuring minimal onboarding time and immediate project value.",
+    id: "ability4",
   },
 ] as const;
 

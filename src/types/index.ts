@@ -1,5 +1,6 @@
 // src/types/index.ts
 import type { IconType } from "react-icons";
+import type { LucideIcon } from "lucide-react";
 
 export type NavLink = {
   name: string;
@@ -9,7 +10,7 @@ export type NavLink = {
 
 export type Word = {
   text: string;
-  imgPath: `./images/${string}`;
+  icon: LucideIcon;
   id: `word${number}`;
 };
 
@@ -37,7 +38,7 @@ export type LogoIcon = {
 };
 
 export type Ability = {
-  imgPath: `./images/${string}`;
+  icon: LucideIcon;
   title: string;
   desc: string;
   id: `ability${number}`;

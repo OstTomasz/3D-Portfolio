@@ -21,7 +21,7 @@ export const Showcase = () => {
         <div className="showcaselayout">
           {/* Left */}
           <div className="first-project-col">
-            <div className="relative flex flex-col flex-1">
+            <div ref={project1Ref} className="relative flex flex-col flex-1">
               <GitHubButton href={project1.githubLink} />
               <a
                 className="first-project-wrapper transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105"
@@ -29,10 +29,7 @@ export const Showcase = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <div
-                  ref={project1Ref}
-                  className="relative border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col"
-                >
+                <div className="relative border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col">
                   <div className="image-wrapper">
                     <img src={project1.imgPath} alt={project1.title} />
                   </div>
@@ -65,7 +62,7 @@ export const Showcase = () => {
           </div>
 
           {/* Right */}
-          <div className="project-list-wrapper">
+          <div ref={project2Ref} className="project-list-wrapper">
             <div className="relative flex-1">
               <GitHubButton href={project2.githubLink} />
               <a
@@ -74,10 +71,7 @@ export const Showcase = () => {
                 rel="noreferrer"
                 className="transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block h-full"
               >
-                <div
-                  ref={project2Ref}
-                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col items-center justify-center h-full pt-5"
-                >
+                <div className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col items-center justify-center h-full pt-5">
                   <div className="image-wrapper">
                     <img src={project2.imgPath} alt={project2.title} />
                   </div>
@@ -93,7 +87,7 @@ export const Showcase = () => {
               </a>
             </div>
 
-            <div className="relative flex-1">
+            <div ref={project3Ref} className="relative flex-1">
               <GitHubButton href={project3.githubLink} />
               <a
                 href={project3.liveLink}
@@ -101,10 +95,7 @@ export const Showcase = () => {
                 rel="noreferrer"
                 className="transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:brightness-105 block h-full"
               >
-                <div
-                  ref={project3Ref}
-                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col items-center justify-center h-full pt-5"
-                >
+                <div className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col items-center justify-center h-full pt-5">
                   <div className="image-wrapper">
                     <img src={project3.imgPath} alt={project3.title} />
                   </div>
