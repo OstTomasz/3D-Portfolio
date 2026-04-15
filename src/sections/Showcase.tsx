@@ -36,7 +36,7 @@ export const Showcase = () => {
                   <div className="image-wrapper">
                     <img src={project1.imgPath} alt={project1.title} />
                   </div>
-                  <div className="text-content">
+                  <div className="text-content mt-5">
                     <h2>{project1.title}</h2>
                     <p className="text-white-50 md:text-xl">{project1.desc}</p>
                   </div>
@@ -76,7 +76,7 @@ export const Showcase = () => {
               >
                 <div
                   ref={project2Ref}
-                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col items-center justify-center h-full"
+                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col items-center justify-center h-full pt-5"
                 >
                   <div className="image-wrapper">
                     <img src={project2.imgPath} alt={project2.title} />
@@ -103,7 +103,7 @@ export const Showcase = () => {
               >
                 <div
                   ref={project3Ref}
-                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col h-full items-center justify-center"
+                  className="relative project border-2 rounded-2xl bg-black-200 border-white-50 p-3 flex flex-col items-center justify-center h-full pt-5"
                 >
                   <div className="image-wrapper">
                     <img src={project3.imgPath} alt={project3.title} />

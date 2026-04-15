@@ -168,11 +168,11 @@ section {
   }
 
   .showcaselayout {
-    @apply flex 2xl:flex-row flex-col gap-10 w-full 2xl:items-stretch;
+    @apply flex 2xl:flex-row flex-col gap-5 w-full 2xl:items-stretch;
   }
 
   .first-project-col {
-    @apply flex flex-col 2xl:w-[60%] w-full 2xl:pr-5;
+    @apply flex flex-col 2xl:w-[60%] w-full;
     @apply justify-between gap-5;
   }
   .first-project-wrapper {
@@ -199,7 +199,7 @@ section {
     }
 
     img {
-      @apply w-full h-full object-contain rounded-xl;
+      @apply w-full max-h-full object-contain rounded-xl;
     }
 
     h2 {
@@ -208,7 +208,7 @@ section {
   }
 
   .text-content {
-    @apply space-y-5 mt-5 p-3 flex-1;
+    @apply space-y-5 p-3 flex-1;
 
     .badges {
       @apply flex gap-2 mb-4;
