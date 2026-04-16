@@ -20,9 +20,9 @@ import type {
   ExpCard,
   TechStackIcon,
   Social,
-  // LogoIcon,
-  // TechStackImg,
-  // Testimonial,
+  LogoIcon,
+  TechStackImg,
+  Testimonial,
 } from "@/types";
 
 export const navLinks: NavLink[] = [
@@ -96,19 +96,19 @@ export const projects: Project[] = [
   },
 ];
 
-// export const logoIconsList: LogoIcon[] = [
-//   { imgPath: "./images/logos/company-logo-1.png", id: "logo1" },
-//   { imgPath: "./images/logos/company-logo-2.png", id: "logo2" },
-//   { imgPath: "./images/logos/company-logo-3.png", id: "logo3" },
-//   { imgPath: "./images/logos/company-logo-4.png", id: "logo4" },
-//   { imgPath: "./images/logos/company-logo-5.png", id: "logo5" },
-//   { imgPath: "./images/logos/company-logo-6.png", id: "logo6" },
-//   { imgPath: "./images/logos/company-logo-7.png", id: "logo7" },
-//   { imgPath: "./images/logos/company-logo-8.png", id: "logo8" },
-//   { imgPath: "./images/logos/company-logo-9.png", id: "logo9" },
-//   { imgPath: "./images/logos/company-logo-10.png", id: "logo10" },
-//   { imgPath: "./images/logos/company-logo-11.png", id: "logo11" },
-// ] as const;
+export const logoIconsList: LogoIcon[] = [
+  { imgPath: "./images/logos/company-logo-1.png", id: "logo1" },
+  { imgPath: "./images/logos/company-logo-2.png", id: "logo2" },
+  { imgPath: "./images/logos/company-logo-3.png", id: "logo3" },
+  { imgPath: "./images/logos/company-logo-4.png", id: "logo4" },
+  { imgPath: "./images/logos/company-logo-5.png", id: "logo5" },
+  { imgPath: "./images/logos/company-logo-6.png", id: "logo6" },
+  { imgPath: "./images/logos/company-logo-7.png", id: "logo7" },
+  { imgPath: "./images/logos/company-logo-8.png", id: "logo8" },
+  { imgPath: "./images/logos/company-logo-9.png", id: "logo9" },
+  { imgPath: "./images/logos/company-logo-10.png", id: "logo10" },
+  { imgPath: "./images/logos/company-logo-11.png", id: "logo11" },
+] as const;
 
 export const abilities: Ability[] = [
   {
@@ -175,33 +175,33 @@ export const expCards: ExpCard[] = [
   },
 ] as const;
 
-// export const techStackImgs: TechStackImg[] = [
-//   {
-//     name: "React",
-//     imgPath: "./images/logos/react.png",
-//     id: "techImg1",
-//   },
-//   {
-//     name: "TypeScript",
-//     imgPath: "./images/logos/python.svg",
-//     id: "techImg2",
-//   },
-//   {
-//     name: "NodeJS",
-//     imgPath: "./images/logos/node.png",
-//     id: "techImg3",
-//   },
-//   {
-//     name: "Interactive",
-//     imgPath: "./images/logos/three.png",
-//     id: "techImg4",
-//   },
-//   {
-//     name: "Project Manager",
-//     imgPath: "./images/logos/git.svg",
-//     id: "techImg5",
-//   },
-// ] as const;
+export const techStackImgs: TechStackImg[] = [
+  {
+    name: "React",
+    imgPath: "./images/logos/react.png",
+    id: "techImg1",
+  },
+  {
+    name: "TypeScript",
+    imgPath: "./images/logos/python.svg",
+    id: "techImg2",
+  },
+  {
+    name: "NodeJS",
+    imgPath: "./images/logos/node.png",
+    id: "techImg3",
+  },
+  {
+    name: "Interactive",
+    imgPath: "./images/logos/three.png",
+    id: "techImg4",
+  },
+  {
+    name: "Project Manager",
+    imgPath: "./images/logos/git.svg",
+    id: "techImg5",
+  },
+] as const;
 
 export const techStackIcons: TechStackIcon[] = [
   {
@@ -241,56 +241,56 @@ export const techStackIcons: TechStackIcon[] = [
   },
 ] as const;
 
-// export const testimonials: Testimonial[] = [
-//   {
-//     name: "Esther Howard",
-//     mentions: "@estherhoward",
-//     review:
-//       "I can't say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-//     imgPath: "./images/client1.png",
-//     id: "testimonial1",
-//   },
-//   {
-//     name: "Wade Warren",
-//     mentions: "@wadewarren",
-//     review:
-//       "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-//     imgPath: "./images/client3.png",
-//     id: "testimonial2",
-//   },
-//   {
-//     name: "Guy Hawkins",
-//     mentions: "@guyhawkins",
-//     review:
-//       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-//     imgPath: "./images/client2.png",
-//     id: "testimonial3",
-//   },
-//   {
-//     name: "Marvin McKinney",
-//     mentions: "@marvinmckinney",
-//     review:
-//       "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
-//     imgPath: "./images/client5.png",
-//     id: "testimonial4",
-//   },
-//   {
-//     name: "Floyd Miles",
-//     mentions: "@floydmiles",
-//     review:
-//       "Adrian's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
-//     imgPath: "./images/client4.png",
-//     id: "testimonial5",
-//   },
-//   {
-//     name: "Albert Flores",
-//     mentions: "@albertflores",
-//     review:
-//       "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-//     imgPath: "./images/client6.png",
-//     id: "testimonial6",
-//   },
-// ] as const;
+export const testimonials: Testimonial[] = [
+  {
+    name: "Esther Howard",
+    mentions: "@estherhoward",
+    review:
+      "I can't say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+    imgPath: "./images/client1.png",
+    id: "testimonial1",
+  },
+  {
+    name: "Wade Warren",
+    mentions: "@wadewarren",
+    review:
+      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+    imgPath: "./images/client3.png",
+    id: "testimonial2",
+  },
+  {
+    name: "Guy Hawkins",
+    mentions: "@guyhawkins",
+    review:
+      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+    imgPath: "./images/client2.png",
+    id: "testimonial3",
+  },
+  {
+    name: "Marvin McKinney",
+    mentions: "@marvinmckinney",
+    review:
+      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
+    imgPath: "./images/client5.png",
+    id: "testimonial4",
+  },
+  {
+    name: "Floyd Miles",
+    mentions: "@floydmiles",
+    review:
+      "Adrian's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
+    imgPath: "./images/client4.png",
+    id: "testimonial5",
+  },
+  {
+    name: "Albert Flores",
+    mentions: "@albertflores",
+    review:
+      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+    imgPath: "./images/client6.png",
+    id: "testimonial6",
+  },
+] as const;
 
 export const socials: Social[] = [
   {
