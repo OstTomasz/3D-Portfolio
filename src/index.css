@@ -295,7 +295,7 @@ section {
   }
 
   .tech-card-content {
-    @apply flex flex-col md:justify-center items-center xl:gap-5 xl:h-[35vh] overflow-hidden relative z-10;
+    @apply flex flex-col md:justify-center items-center xl:gap-5 xl:h-[35vh] overflow-hidden px-5 relative z-10;
 
     & p {
       @apply text-lg 2xl:text-2xl pb-5 xl:pb-0 font-semibold text-white-50 text-center;
@@ -303,7 +303,7 @@ section {
   }
 
   .tech-grid {
-    @apply grid xl:grid-cols-5 md:grid-cols-3 grid-cols-1 xl:gap-16 md:gap-10 gap-5 mt-16;
+    @apply flex flex-wrap justify-center gap-5 md:gap-10 xl:gap-16 mt-16;
   }
 
   .tech-icon-wrapper {

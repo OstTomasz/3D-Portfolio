@@ -54,12 +54,6 @@ export type ExpCard = {
   id: `experience${string}`;
 };
 
-export type ExpLogo = {
-  name: string;
-  imgPath: `./images/${string}`;
-  id: `expLogo${number}`;
-};
-
 export type TechStackImg = {
   name: string;
   imgPath: `./images/${string}`;
