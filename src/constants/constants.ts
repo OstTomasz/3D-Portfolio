@@ -140,30 +140,37 @@ export const abilities: Ability[] = [
 
 export const expCards: ExpCard[] = [
   {
-    review:
-      "Adrian's contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+    review: `I had the pleasure of working with Tomasz for a year upon taking over the region. This period allowed me to gain a comprehensive understanding of both his technical expertise and organizational skills. 
+      Tomasz is a Technical Sales Advisor with exceptionally high technical competencies. He possesses the ability to accurately diagnose problems and explain their causes and potential solutions in a clear, substantive manner. His knowledge and analytical mindset make him a genuine asset to both clients and the team alike.
+      His field work planning skills also deserve special recognition. Tomasz's travel routes were always meticulously thought out, logically structured, and consistently executed, resulting in high operational efficiency and optimal time management.
+      Tomasz is a specialist you can rely on—dependable, independent, and possessing a very strong professional background. I recommend him with full confidence as a technical expert and a valuable partner for projects that demand knowledge, precision, and accountability.`,
     imgPath: "./images/tiptopol.svg",
-    logoPath: "./images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    logoPath: "./images/logotiptopol.avif",
+    title: "Technical Sales Advisor",
+    date: "February 2023 - December 2025",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Identified and acquired new business opportunities within the assigned region to drive growth.",
+      "Managed long-term stakeholder relationships, ensuring high retention and client satisfaction.",
+      "Coordinated the end-to-end lifecycle of client orders, from requirements gathering to final delivery.",
+      "Conducted technical onboarding and professional training sessions for clients and internal teams.",
+      "Strategically planned and optimized field operations to maximize regional efficiency.",
+      "Provided expert technical consulting and diagnosed client needs to deliver scalable, tailored solutions.",
     ],
     id: "experience1",
   },
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+      "Tomasz integrated seamlessly into the technical team and was quick to acquire necessary skills. He approached his assigned tasks with great commitment and demonstrates the ability to work effectively both as a team player and independently when required. He is a diligent, dedicated, and responsible professional who remains flexible regarding working hours when necessary. Tomasz is a reliable employee who has consistently met my expectations.",
     imgPath: "./images/forte.png",
     logoPath: "./images/logoforte.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    title: "Maintenance Mechanic",
+    date: "May 2019 - October 2022",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Ensured maximum uptime of production machinery through proactive maintenance and rapid troubleshooting of technical failures.",
+      "Diagnosed root causes of equipment malfunctions and implemented effective corrective actions.",
+      "Optimized machinery performance and handled system stability through regular inspections.",
+      "Managed spare parts inventory and resource allocation to ensure continuous operation.",
+      "Maintained precise technical documentation and logged system data within the KPMS environment.",
     ],
     id: "experience2",
   },

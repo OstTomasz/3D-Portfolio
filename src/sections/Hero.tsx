@@ -24,24 +24,35 @@ export const Hero = () => {
       </div>
 
       <div className="hero-layout xl:justify-start">
-        <div className="flex flex-col justify-center xl:w-1/2 md:w-full w-screen xl:px-0 xl:pl-15 md:px-20 px-5">
+        <div className="flex flex-col justify-center xl:w-1/2 md:w-full w-screen xl:px-0 xl:pl-15 xl:pt-20 md:px-20 px-5">
           <div className="flex flex-col items-center xl:items-start gap-7">
             <div className="hero-text">
-              <h1 className="text-white">
+              <h1
+                className="text-white font-bold leading-[1.1] 
+               text-[clamp(1.75rem,5vw+1rem,4.5rem)]"
+              >
+                {/* 1.75rem (~28px) - minimum na mobile
+      5vw+1rem - wartość elastyczna (rośnie z oknem)
+      4.5rem (~72px) - maksimum na desktopie
+  */}
                 Shaping
-                <span className="slide">
+                <span className="slide inline-block overflow-hidden align-bottom">
                   <span className="wrapper" ref={wrapperRef}>
                     {words.map(({ text, icon: Icon, id }) => (
                       <span
                         key={id}
                         className="flex items-center md:gap-3 gap-1 pb-2 group"
                       >
+                        {/* Rozmiar ikony też skalujemy płynnie */}
                         <div
-                          className="relative xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white/5 border border-white/10 flex items-center justify-center
-                            shadow-[0_0_15px_rgba(96,165,250,0.3)] group-hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all duration-300"
+                          className="relative 
+              w-[clamp(1.75rem,4vw,3rem)] 
+              h-[clamp(1.75rem,4vw,3rem)] 
+              md:p-2 p-1 rounded-full bg-white/5 border border-white/10 flex items-center justify-center
+              glow-hover"
                         >
                           <Icon
-                            className="w-full h-full"
+                            className="w-full h-full text-gradient-hover"
                             style={{ stroke: "url(#blue-gradient)" }}
                             strokeWidth={2.5}
                           />
@@ -52,9 +63,7 @@ export const Hero = () => {
                   </span>
                 </span>
                 <br />
-                into robust products that
-                <br />
-                turn problems into solutions.
+                into robust products that turn problems into solutions.
               </h1>
             </div>
             <p className="xl:pb-15 xl:text-start text-center md:text-xl xl:text-2xl relative z-10 pointer-events-none">
@@ -62,7 +71,7 @@ export const Hero = () => {
               spot between clean code and great UX.
             </p>
             <Button
-              className="md:w-80 md:h-16 w-60 h-12"
+              className="md:w-80 md:h-16 w-60 h-12 md:hidden"
               text="See my Work"
               id="counters"
             />

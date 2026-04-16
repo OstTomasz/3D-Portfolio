@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import { TechCard } from "@/components/TechCard";
 import { useGLTF } from "@react-three/drei";
+import { Handshake } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +33,8 @@ export const TechStack = () => {
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="My preferred Tech Stack"
-          subtitle="🤝 What skills I bring to the table"
+          subtitle="What skills I bring to the table"
+          icon={Handshake}
         />
       </div>
       <div className="tech-grid">

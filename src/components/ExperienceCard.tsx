@@ -1,6 +1,7 @@
 import type { ExpCard } from "@/types";
 import { GlowingCard } from "./GlowingCard";
 import type { MouseEventHandler } from "react";
+import { Calendars } from "lucide-react";
 
 type ExperienceCardProps = ExpCard & {
   index: number;
@@ -21,7 +22,7 @@ export const ExperienceCard = ({
 }: ExperienceCardProps) => {
   return (
     <div className="exp-card-wrapper">
-      <div className="timeline-card xl:w-2/6 z-40">
+      <div className="xl:w-3/6 z-40">
         <GlowingCard
           ref={setCardRef(index)}
           review={review}
@@ -30,7 +31,7 @@ export const ExperienceCard = ({
           <img src={imgPath} alt={title} width={150} />
         </GlowingCard>
       </div>
-      <div className="xl:w-4/6">
+      <div className="xl:w-3/6">
         <div className="flex items-start">
           <div className="timeline-wrapper">
             <div className="timeline" />
@@ -44,7 +45,14 @@ export const ExperienceCard = ({
 
             <div className="exp-text">
               <h3 className="font-semibold text-3xl">{title}</h3>
-              <p className="my-5 text-white-50">🗓️ {date}</p>
+              <p className="my-5 text-white-50 flex items-center gap-2 font-medium">
+                <Calendars
+                  size={20}
+                  style={{ stroke: "url(#blue-gradient)" }}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
+                {date}
+              </p>
               <p className="text-blue-50 italic">Responsibilities</p>
               <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
                 {responsibilities.map((responsibility) => (

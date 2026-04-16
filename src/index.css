@@ -48,6 +48,24 @@ section {
 }
 
 @layer components {
+  .glow-hover {
+    @apply transition-all duration-500 ease-in-out bg-zinc-950 border border-white/10 text-white shadow-none;
+
+    @apply group-hover:border-purple-500/50 
+           group-hover:shadow-[0_0_25px_rgba(168,85,247,0.4)];
+  }
+
+  .text-gradient-hover {
+    @apply transition-all duration-500 ease-in-out text-white bg-clip-text;
+    background-image: linear-gradient(to right, #60a5fa, #a855f7);
+    background-color: white;
+    background-size: 100%;
+  }
+
+  .group:hover .text-gradient-hover {
+    @apply text-transparent;
+  }
+
   .padding-x {
     @apply px-5 md:px-10;
   }
@@ -90,14 +108,11 @@ section {
   }
 
   .hero-layout {
-    @apply relative z-10 mt-32 xl:h-150 md:h-230 h-140 flex items-start justify-center;
+    @apply relative z-10 mt-32 xl:h-150 md:h-230 h-150 flex items-start justify-center mb-10;
   }
 
   .hero-text {
-    @apply flex flex-col justify-center items-center xl:items-start md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
-    img {
-      @apply size-8 md:size-10 object-contain;
-    }
+    @apply flex flex-col justify-center items-center xl:items-start font-semibold relative z-10 pointer-events-none;
     .slide {
       @apply absolute pt-0 px-2 md:px-5 py-7.5 h-12 md:h-21.5 md:translate-y-1 translate-y-0 overflow-hidden;
     }
@@ -108,7 +123,7 @@ section {
   }
 
   .hero-3d-layout {
-    @apply xl:w-[55%] w-full md:h-150 h-85 absolute xl:top-0 md:top-110 top-85 xl:right-20 right-0;
+    @apply xl:w-[55%] w-full md:h-150 h-85 absolute xl:top-0 top-90 xl:right-20 right-0 my-10;
   }
 
   .navbar {
@@ -146,18 +161,6 @@ section {
           .underline {
             @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full;
           }
-        }
-      }
-    }
-
-    .contact-btn {
-      @apply flex;
-
-      .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
-
-        span {
-          @apply group-hover:text-white transition-colors duration-300;
         }
       }
     }
@@ -268,7 +271,7 @@ section {
   }
 
   .timeline-wrapper {
-    @apply absolute top-0 xl:left-[40.5%] md:left-10 left-5 h-full flex justify-center;
+    @apply absolute top-0 xl:-right-29 md:left-10 left-5 h-full flex justify-center;
   }
 
   .timeline {
@@ -280,7 +283,7 @@ section {
   }
 
   .exp-card-wrapper {
-    @apply flex flex-col-reverse xl:flex-row 2xl:gap-20 xl:gap-18 gap-10 justify-between;
+    @apply flex flex-col-reverse xl:flex-row gap-10 justify-between xl:gap-[clamp(4.5rem,2.5vw+2.5rem,5rem)];
   }
 
   .gradient-edge {

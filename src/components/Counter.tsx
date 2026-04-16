@@ -33,7 +33,7 @@ export const Counter = ({ value, suffix, label }: CounterProps) => {
   return (
     <div className="bg-zinc-900 rounded-xl p-10 flex flex-col items-center text-center group transition-all duration-300 hover:bg-zinc-800/50">
       <div className="counter-number relative mb-2 cursor-default select-none">
-        <span className="text-6xl font-bold bg-linear-to-br from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-500 group-hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+        <span className="text-gradient-hover text-6xl font-bold">
           {count}
           {suffix}
         </span>

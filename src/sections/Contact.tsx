@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/Button";
 import { FormField, type ContactFormData } from "@/components/FormField";
+import { Rocket } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -63,7 +64,8 @@ export const Contact = () => {
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="Get in Touch – Let's Connect"
-          subtitle="💬 Have questions or ideas? Let's talk! 🚀"
+          subtitle=" Have questions or ideas? Let's talk!"
+          icon={Rocket}
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">

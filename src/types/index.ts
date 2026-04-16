@@ -88,3 +88,9 @@ export type Social = {
   site: string;
   id: `socialImg${number}`;
 };
+
+export type TitleHeaderProps = {
+  title: string;
+  subtitle: string;
+  icon: LucideIcon;
+};
