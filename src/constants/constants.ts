@@ -75,7 +75,7 @@ export const projects: Project[] = [
     title: "Seller CRM",
     desc: "A professional Full-stack CRM application designed to streamline client management and sales workflows. The system enables sales teams to efficiently track interactions and manage customer data within a scalable, modern environment.",
     imgPath: "./images/seller.avif",
-    liveLink: "https://github.com/OstTomasz/Seller",
+    liveLink: "https://seller-crm-tau.vercel.app",
     githubLink: "https://github.com/OstTomasz/Seller",
   },
   {
