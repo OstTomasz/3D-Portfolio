@@ -56,7 +56,7 @@ export const counterItems: CounterItem[] = [
     id: "counter2",
   },
   {
-    value: 15,
+    value: 7,
     suffix: "+",
     label: "Projects in GitHub ecosystem",
     id: "counter3",
