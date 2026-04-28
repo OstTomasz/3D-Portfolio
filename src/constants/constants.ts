@@ -205,25 +205,18 @@ export const techStackImgs: TechStackImg[] = [
 
 export const techStackIcons: TechStackIcon[] = [
   {
-    name: "MongoDB",
-    modelPath: "./models/mongodb-logo.glb",
-    scale: 45,
-    rotation: [0, -Math.PI / 4, 0],
-    id: "techIcon5",
-  },
-  {
-    name: "Express",
-    modelPath: "./models/js-logo.glb",
-    scale: 40,
-    rotation: [0, 0, 0],
-    id: "techIcon4",
-  },
-  {
     name: "React",
     modelPath: "./models/react-logo.glb",
     scale: 1,
     rotation: [0, 0, 0],
     id: "techIcon1",
+  },
+  {
+    name: "TypeScript",
+    modelPath: "./models/ts-logo.glb",
+    scale: 40,
+    rotation: [0, 0, 0],
+    id: "techIcon2",
   },
   {
     name: "NodeJS",
@@ -233,11 +226,18 @@ export const techStackIcons: TechStackIcon[] = [
     id: "techIcon3",
   },
   {
-    name: "TypeScript",
-    modelPath: "./models/ts-logo.glb",
+    name: "Tailwind",
+    modelPath: "./models/tailwindcss-logo.glb",
     scale: 40,
     rotation: [0, 0, 0],
-    id: "techIcon2",
+    id: "techIcon4",
+  },
+  {
+    name: "MongoDB",
+    modelPath: "./models/mongodb-logo.glb",
+    scale: 45,
+    rotation: [0, -Math.PI / 4, 0],
+    id: "techIcon5",
   },
 ] as const;
 

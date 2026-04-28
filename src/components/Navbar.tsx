@@ -23,8 +23,8 @@ export const NavBar = () => {
           </ul>
         </nav>
         <a href="#contact" className="contact-btn group relative block w-fit">
-          <div className="glow-hover flex items-center justify-center rounded-full border px-8 py-3">
-            <span className="text-gradient-hover font-bold text-lg">
+          <div className="glow-hover flex items-center justify-center rounded-full border px-3 md:px-8 py-3">
+            <span className="text-gradient-hover font-bold text-center text-md md:text-lg">
               Contact me
             </span>
           </div>
